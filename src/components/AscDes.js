@@ -2,7 +2,7 @@ import React from "react";
 
 const AscDes = ({ sort, setSort }) => {
   return (
-    <div>
+    <div className="asc-desc">
       <div>
         <input
           type="radio"

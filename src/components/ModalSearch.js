@@ -1,7 +1,20 @@
 import React from "react";
+import ModalSortComponents from "./ModalSortComponents";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function ModalSearchBar({ setModalSearchBar, title, setTitle }) {
+export default function ModalSearch({
+  setModalSearchBar,
+  title,
+  setTitle,
+  sort,
+  setSort,
+  priceMin,
+  setPriceMin,
+  priceMax,
+  setPriceMax,
+  rangeValue,
+  setRangeValue,
+}) {
   return (
     <div className="modal-search-bar">
       <FontAwesomeIcon icon="search" />
@@ -12,6 +25,17 @@ export default function ModalSearchBar({ setModalSearchBar, title, setTitle }) {
         onChange={(e) => {
           setTitle(e.target.value);
         }}
+      />
+
+      <ModalSortComponents
+        sort={sort}
+        setSort={setSort}
+        priceMin={priceMin}
+        setPriceMin={setPriceMin}
+        priceMax={priceMax}
+        setPriceMax={setPriceMax}
+        rangeValue={rangeValue}
+        setRangeValue={setRangeValue}
       />
 
       <FontAwesomeIcon

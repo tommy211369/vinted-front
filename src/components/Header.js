@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import Logo from "./Logo";
 import Search from "./Search";
 import Menu from "./Menu";
-import ModalSearchBar from "./ModalSearchBar";
+import ModalSearch from "./ModalSearch";
 import ModalMenu from "./ModalMenu";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -73,10 +73,18 @@ export default function Header({
 
         {/* Modals */}
         {modalSearchBar ? (
-          <ModalSearchBar
+          <ModalSearch
             setModalSearchBar={setModalSearchBar}
             title={title}
             setTitle={setTitle}
+            sort={sort}
+            setSort={setSort}
+            priceMin={priceMin}
+            setPriceMin={setPriceMin}
+            priceMax={priceMax}
+            setPriceMax={setPriceMax}
+            rangeValue={rangeValue}
+            setRangeValue={setRangeValue}
           />
         ) : (
           <Fragment></Fragment>
