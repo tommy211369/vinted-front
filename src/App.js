@@ -32,6 +32,9 @@ function App() {
   const [modalSearchBar, setModalSearchBar] = useState(false);
   const [modalMenu, setModalMenu] = useState(false);
   const [title, setTitle] = useState(""); // value of title
+  const [sort, setSort] = useState(""); // value of sort
+  const [priceMin, setPriceMin] = useState(""); // value of priceMin
+  const [priceMax, setPriceMax] = useState(""); // value of priceMax
 
   // set cookie token
   const setUser = (token) => {
@@ -49,11 +52,14 @@ function App() {
         setModalSearchBar={setModalSearchBar}
         modalMenu={modalMenu}
         setModalMenu={setModalMenu}
-        // searchBar={searchBar}
-        // setSearchBar={setSearchBar}
-        // filterTitle={filterTitle}
         title={title}
         setTitle={setTitle}
+        sort={sort}
+        setSort={setSort}
+        priceMin={priceMin}
+        setPriceMin={setPriceMin}
+        priceMax={priceMax}
+        setPriceMax={setPriceMax}
       />
       <Switch>
         <Route path="/offer/:id">
@@ -75,7 +81,12 @@ function App() {
         </Route>
 
         <Route path="/">
-          <Home title={title} />
+          <Home
+            title={title}
+            sort={sort}
+            priceMin={priceMin}
+            priceMax={priceMax}
+          />
         </Route>
       </Switch>
     </Router>

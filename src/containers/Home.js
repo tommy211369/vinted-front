@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 import ItemsList from "../components/ItemsList";
 import axios from "axios";
 
-export default function Home({ title }) {
+export default function Home({ title, sort, priceMin, priceMax }) {
   const [data, setData] = useState({}); // number of offers
   const [isLoading, setIsLoading] = useState(true);
   const [count, setCount] = useState({}); // offers total
@@ -17,7 +17,7 @@ export default function Home({ title }) {
     const fetchOffers = async () => {
       try {
         const response = await axios.get(
-          `https://vinted-back-tommy.herokuapp.com/offers?limit=${nbrItems}&page=${page}&title=${title}`
+          `https://vinted-back-tommy.herokuapp.com/offers?limit=${nbrItems}&page=${page}&title=${title}&sort=${sort}`
         );
         setCount(response.data.count);
         setData(response.data.offers);
@@ -28,7 +28,7 @@ export default function Home({ title }) {
     };
 
     fetchOffers();
-  }, [nbrItems, page, title]);
+  }, [nbrItems, page, title, sort]);
 
   return isLoading ? (
     <Spinner />
@@ -37,13 +37,10 @@ export default function Home({ title }) {
       <Hero />
       <ItemsList
         data={data}
-        // displayAllOffers={displayAllOffers}
         count={count}
         nbrItems={nbrItems}
         setNbrItems={setNbrItems}
         setPage={setPage}
-        // selectPage={selectPage}
-        // selectItems={selectItems}
         isLoading={isLoading}
         setIsLoading={setIsLoading}
         title={title}

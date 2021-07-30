@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import Logo from "./Logo";
-import SearchBar from "./SearchBar";
+import Search from "./Search";
 import Menu from "./Menu";
 import ModalSearchBar from "./ModalSearchBar";
 import ModalMenu from "./ModalMenu";
@@ -17,6 +17,12 @@ export default function Header({
   dataUsername,
   title,
   setTitle,
+  sort,
+  setSort,
+  priceMin,
+  setPriceMin,
+  priceMax,
+  setPriceMax,
 }) {
   return (
     <div className="header">
@@ -35,7 +41,16 @@ export default function Header({
         )}
 
         <Logo />
-        <SearchBar title={title} setTitle={setTitle} />
+        <Search
+          title={title}
+          setTitle={setTitle}
+          sort={sort}
+          setSort={setSort}
+          priceMin={priceMin}
+          setPriceMin={setPriceMin}
+          priceMax={priceMax}
+          setPriceMax={setPriceMax}
+        />
 
         <Menu
           userToken={userToken}
