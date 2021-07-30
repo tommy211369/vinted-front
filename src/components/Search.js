@@ -11,6 +11,8 @@ const Search = ({
   setPriceMin,
   priceMax,
   setPriceMax,
+  rangeValue,
+  setRangeValue,
 }) => {
   return (
     <div className="search">
@@ -22,6 +24,8 @@ const Search = ({
         setPriceMin={setPriceMin}
         priceMax={priceMax}
         setPriceMax={setPriceMax}
+        rangeValue={rangeValue}
+        setRangeValue={setRangeValue}
       />
     </div>
   );

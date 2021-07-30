@@ -35,6 +35,7 @@ function App() {
   const [sort, setSort] = useState(""); // value of sort
   const [priceMin, setPriceMin] = useState(""); // value of priceMin
   const [priceMax, setPriceMax] = useState(""); // value of priceMax
+  const [rangeValue, setRangeValue] = useState([50]); // value of rangeValue
 
   // set cookie token
   const setUser = (token) => {
@@ -60,6 +61,8 @@ function App() {
         setPriceMin={setPriceMin}
         priceMax={priceMax}
         setPriceMax={setPriceMax}
+        rangeValue={rangeValue}
+        setRangeValue={setRangeValue}
       />
       <Switch>
         <Route path="/offer/:id">

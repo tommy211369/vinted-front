@@ -9,6 +9,8 @@ const SortComponents = ({
   setPriceMin,
   priceMax,
   setPriceMax,
+  rangeValue,
+  setRangeValue,
 }) => {
   return (
     <div className="sort-components">
@@ -18,6 +20,8 @@ const SortComponents = ({
         setPriceMin={setPriceMin}
         priceMax={priceMax}
         setPriceMax={setPriceMax}
+        rangeValue={rangeValue}
+        setRangeValue={setRangeValue}
       />
     </div>
   );

@@ -17,7 +17,7 @@ export default function Home({ title, sort, priceMin, priceMax }) {
     const fetchOffers = async () => {
       try {
         const response = await axios.get(
-          `https://vinted-back-tommy.herokuapp.com/offers?limit=${nbrItems}&page=${page}&title=${title}&sort=${sort}`
+          `https://vinted-back-tommy.herokuapp.com/offers?limit=${nbrItems}&page=${page}&title=${title}&sort=${sort}&priceMin=${priceMin}&priceMax=${priceMax}`
         );
         setCount(response.data.count);
         setData(response.data.offers);
@@ -28,7 +28,7 @@ export default function Home({ title, sort, priceMin, priceMax }) {
     };
 
     fetchOffers();
-  }, [nbrItems, page, title, sort]);
+  }, [nbrItems, page, title, sort, priceMin, priceMax]);
 
   return isLoading ? (
     <Spinner />

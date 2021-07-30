@@ -23,6 +23,8 @@ export default function Header({
   setPriceMin,
   priceMax,
   setPriceMax,
+  rangeValue,
+  setRangeValue,
 }) {
   return (
     <div className="header">
@@ -50,6 +52,8 @@ export default function Header({
           setPriceMin={setPriceMin}
           priceMax={priceMax}
           setPriceMax={setPriceMax}
+          rangeValue={rangeValue}
+          setRangeValue={setRangeValue}
         />
 
         <Menu

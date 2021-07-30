@@ -9,9 +9,6 @@ export default function ItemsList({
   nbrItems,
   setNbrItems,
   setPage,
-  // selectPage,
-  // selectItems,
-  title,
 }) {
   return (
     <div className="items-list">
@@ -44,13 +41,8 @@ export default function ItemsList({
           />
         </div>
 
+        {/* display offers */}
         <div className="offers">
-          {" "}
-          {/*  {title
-            ? title.map((offer, index) => {
-                return <Offer key={index} offer={offer} />;
-              })
-            : */}{" "}
           {data.map((offer, index) => {
             return <Offer key={index} offer={offer} />;
           })}
