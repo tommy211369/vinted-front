@@ -5,7 +5,13 @@ import Hero from "../components/Hero";
 import ItemsList from "../components/ItemsList";
 import axios from "axios";
 
-export default function Home({ title, sort, priceMin, priceMax }) {
+export default function Home({
+  title,
+  sort,
+  priceMin,
+  priceMax,
+  setDisplaySearch,
+}) {
   const [data, setData] = useState({}); // number of offers
   const [isLoading, setIsLoading] = useState(true);
   const [count, setCount] = useState({}); // offers total
@@ -14,6 +20,7 @@ export default function Home({ title, sort, priceMin, priceMax }) {
 
   // at component loading
   useEffect(() => {
+    setDisplaySearch(true);
     const fetchOffers = async () => {
       try {
         const response = await axios.get(

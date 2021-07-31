@@ -27,12 +27,12 @@ export default function Menu({
         <LogInSignOut setModalMenu={setModalMenu} />
       )}
 
-      {userToken !== null ? (
-        <Link to="/sell" className="sell-now">
+      {userToken === null ? (
+        <Link to="/login" className="sell-now">
           Vends maintenant
         </Link>
       ) : (
-        <Link to="/login" className="sell-now">
+        <Link to="/sell" className="sell-now">
           Vends maintenant
         </Link>
       )}

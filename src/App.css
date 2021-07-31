@@ -12,6 +12,10 @@ body {
 }
 
 /* HEADER */
+
+.header {
+  border-bottom: 2px solid #3bc1c8;
+}
 .header .wrapper {
   display: flex;
   align-items: center;
@@ -19,6 +23,21 @@ body {
   max-width: 1240px;
   margin: 0 auto;
   position: relative;
+}
+
+.header .wrapper-no-search {
+  width: 930px;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.header .wrapper-no-search img {
+  width: 200px;
+  height: 48px;
+  object-fit: contain;
 }
 
 .header img {
@@ -166,6 +185,11 @@ body {
 .sell-now:hover {
   color: #3bc1c8;
   background-color: white;
+}
+
+.sell h1 {
+  width: max-content;
+  margin: 30px auto;
 }
 
 .languages {

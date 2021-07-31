@@ -27,10 +27,12 @@ export default function Header({
   setSortSwitch,
   activeSwitch,
   setActiveSwitch,
+  displaySearch,
+  setDisplaySearch,
 }) {
   return (
     <div className="header">
-      <div className="wrapper">
+      <div className={displaySearch ? "wrapper" : "wrapper-no-search"}>
         {!modalSearchBar ? (
           <FontAwesomeIcon
             icon="search"
@@ -45,20 +47,25 @@ export default function Header({
         )}
 
         <Logo />
-        <Search
-          title={title}
-          setTitle={setTitle}
-          sort={sort}
-          setSort={setSort}
-          priceMin={priceMin}
-          setPriceMin={setPriceMin}
-          priceMax={priceMax}
-          setPriceMax={setPriceMax}
-          sortSwitch={sortSwitch}
-          setSortSwitch={setSortSwitch}
-          activeSwitch={activeSwitch}
-          setActiveSwitch={setActiveSwitch}
-        />
+
+        {displaySearch ? (
+          <Search
+            title={title}
+            setTitle={setTitle}
+            sort={sort}
+            setSort={setSort}
+            priceMin={priceMin}
+            setPriceMin={setPriceMin}
+            priceMax={priceMax}
+            setPriceMax={setPriceMax}
+            sortSwitch={sortSwitch}
+            setSortSwitch={setSortSwitch}
+            activeSwitch={activeSwitch}
+            setActiveSwitch={setActiveSwitch}
+          />
+        ) : (
+          <Fragment></Fragment>
+        )}
 
         <Menu
           userToken={userToken}
@@ -76,7 +83,7 @@ export default function Header({
         />
 
         {/* Modals */}
-        {modalSearchBar ? (
+        {modalSearchBar && displaySearch ? (
           <ModalSearch
             setModalSearchBar={setModalSearchBar}
             title={title}

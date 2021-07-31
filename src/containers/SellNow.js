@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const SellNow = () => {
-  return <div>SellNow</div>;
+const Sell = ({ setDisplaySearch }) => {
+  useEffect(() => {
+    setDisplaySearch(false);
+  }, [setDisplaySearch]);
+  return (
+    <div className="sell">
+      <h1>Vendez vos produits !</h1>
+    </div>
+  );
 };
 
-export default SellNow;
+export default Sell;

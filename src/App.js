@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import Offer from "./containers/Offer";
 import SignUp from "./containers/SignUp";
 import LogIn from "./containers/LogIn";
-import SellNow from "./containers/SellNow";
+import Sell from "./containers/SellNow";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faSearch,
@@ -43,6 +43,7 @@ function App() {
   const [priceMax, setPriceMax] = useState(""); // value of priceMax
   const [sortSwitch, setSortSwitch] = useState("");
   const [activeSwitch, setActiveSwitch] = useState(false);
+  const [displaySearch, setDisplaySearch] = useState(true); // display the search bar or not
 
   // set cookie token
   const setUser = (token) => {
@@ -72,16 +73,18 @@ function App() {
         setSortSwitch={setSortSwitch}
         activeSwitch={activeSwitch}
         setActiveSwitch={setActiveSwitch}
+        displaySearch={displaySearch}
       />
       <Switch>
         <Route path="/offer/:id">
-          <Offer />
+          <Offer setDisplaySearch={setDisplaySearch} />
         </Route>
         <Route path="/signup">
           <SignUp
             setUser={setUser}
             dataUsername={dataUsername}
             setDataUsername={setDataUsername}
+            setDisplaySearch={setDisplaySearch}
           />
         </Route>
         <Route path="/login">
@@ -89,13 +92,15 @@ function App() {
             setUser={setUser}
             dataUsername={dataUsername}
             setDataUsername={setDataUsername}
+            setDisplaySearch={setDisplaySearch}
           />
         </Route>
         <Route path="/sell">
-          <LogIn
+          <Sell
             setUser={setUser}
             dataUsername={dataUsername}
             setDataUsername={setDataUsername}
+            setDisplaySearch={setDisplaySearch}
           />
         </Route>
 
@@ -105,6 +110,7 @@ function App() {
             sort={sort}
             priceMin={priceMin}
             priceMax={priceMax}
+            setDisplaySearch={setDisplaySearch}
           />
         </Route>
       </Switch>

@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
 
-export default function SignUp({ setUser, setDataUsername }) {
+export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
   const [token, setToken] = useState({}); // token
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    setDisplaySearch(false);
+  }, [setDisplaySearch]);
 
   const history = useHistory();
 

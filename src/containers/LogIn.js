@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
 
-export default function LogIn({ setUser, setDataUsername }) {
+export default function LogIn({ setUser, setDataUsername, setDisplaySearch }) {
   const [token, setToken] = useState({});
   const [unauthorized, setUnauthorized] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    setDisplaySearch(false);
+  }, [setDisplaySearch]);
 
   const history = useHistory();
 

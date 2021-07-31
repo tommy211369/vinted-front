@@ -5,13 +5,15 @@ import OfferDetails from "../components/OfferDetails";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-export default function Offer() {
+export default function Offer({ setDisplaySearch }) {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   const { id } = useParams();
 
   useEffect(() => {
+    setDisplaySearch(false);
+
     const fetchData = async () => {
       try {
         const response = await axios.get(
