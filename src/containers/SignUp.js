@@ -8,6 +8,7 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [picture, setPicture] = useState("");
 
   useEffect(() => {
     setDisplaySearch(false);
@@ -31,11 +32,17 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
     setPassword(e.target.value);
   };
 
+  const handlePicture = (e) => {
+    console.log(e.target.files[0]);
+    setPicture(e.target.files[0]);
+  };
+
   const userData = {
     username: username,
     email: email,
     phone: phone,
     password: password,
+    picture: picture,
   };
 
   console.log(userData);
@@ -68,22 +75,27 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
           type="text"
           placeholder="Nom d'utilisateur"
           onChange={handleUserName}
+          required
         />
         <input
           type="email"
           placeholder="Adresse email"
           onChange={handleEmail}
+          required
         />
         <input
           type="number"
           placeholder="Numéro de téléphone"
           onChange={handlePhoneNumber}
+          required
         />
         <input
           type="password"
           placeholder="Mot de passe"
           onChange={handlePassword}
+          required
         />
+        <input type="file" onChange={handlePicture} accept="image/*" />
 
         <div className="newsletter">
           <h4>

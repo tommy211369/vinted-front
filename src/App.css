@@ -129,6 +129,10 @@ body {
   align-items: center;
 }
 
+.slider p {
+  font-size: 12px;
+}
+
 .header ul,
 .header .modal-menu {
   display: flex;
@@ -680,10 +684,6 @@ body {
     width: 290px;
     height: 320px;
     object-fit: cover;
-  }
-
-  .slider p {
-    font-size: 12px;
   }
 }
 
