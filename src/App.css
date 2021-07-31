@@ -672,6 +672,10 @@ body {
     visibility: visible;
   }
 
+  .header .modal-menu-nosearch {
+    left: 37%;
+  }
+
   .offerDetails img {
     width: 290px;
     height: 320px;
@@ -772,6 +776,10 @@ body {
   .header .modal-menu-nosearch {
     width: 50%;
   }
+
+  .header .modal-menu-nosearch {
+    left: 27%;
+  }
 }
 
 @media (max-width: 538px) {
@@ -824,6 +832,11 @@ body {
   .form {
     width: 60%;
   }
+
+  .header .modal-menu-nosearch {
+    width: 60%;
+    left: 20%;
+  }
 }
 
 @media (max-width: 375px) {
@@ -859,5 +872,10 @@ body {
 @media (max-width: 320px) {
   .form {
     width: 80%;
+  }
+
+  .header .modal-menu-nosearch {
+    width: 80%;
+    left: 10%;
   }
 }
