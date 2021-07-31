@@ -1,6 +1,6 @@
 import React from "react";
 import AscDes from "./AscDes";
-import SortPrice from "./SortPrice";
+import RangeSlider from "./RangeSlider";
 
 const SortComponents = ({
   sort,
@@ -9,8 +9,6 @@ const SortComponents = ({
   setPriceMin,
   priceMax,
   setPriceMax,
-  rangeValue,
-  setRangeValue,
   sortSwitch,
   setSortSwitch,
   activeSwitch,
@@ -26,13 +24,11 @@ const SortComponents = ({
         activeSwitch={activeSwitch}
         setActiveSwitch={setActiveSwitch}
       />
-      <SortPrice
+      <RangeSlider
         priceMin={priceMin}
-        setPriceMin={setPriceMin}
         priceMax={priceMax}
+        setPriceMin={setPriceMin}
         setPriceMax={setPriceMax}
-        rangeValue={rangeValue}
-        setRangeValue={setRangeValue}
       />
     </div>
   );

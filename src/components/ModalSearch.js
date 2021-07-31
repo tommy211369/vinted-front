@@ -12,8 +12,6 @@ export default function ModalSearch({
   setPriceMin,
   priceMax,
   setPriceMax,
-  rangeValue,
-  setRangeValue,
   sortSwitch,
   setSortSwitch,
   activeSwitch,
@@ -38,8 +36,6 @@ export default function ModalSearch({
         setPriceMin={setPriceMin}
         priceMax={priceMax}
         setPriceMax={setPriceMax}
-        rangeValue={rangeValue}
-        setRangeValue={setRangeValue}
         sortSwitch={sortSwitch}
         setSortSwitch={setSortSwitch}
         activeSwitch={activeSwitch}

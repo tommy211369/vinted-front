@@ -11,8 +11,6 @@ const Search = ({
   setPriceMin,
   priceMax,
   setPriceMax,
-  rangeValue,
-  setRangeValue,
   sortSwitch,
   setSortSwitch,
   activeSwitch,
@@ -28,8 +26,6 @@ const Search = ({
         setPriceMin={setPriceMin}
         priceMax={priceMax}
         setPriceMax={setPriceMax}
-        rangeValue={rangeValue}
-        setRangeValue={setRangeValue}
         sortSwitch={sortSwitch}
         setSortSwitch={setSortSwitch}
         activeSwitch={activeSwitch}

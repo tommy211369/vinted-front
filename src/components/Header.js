@@ -23,8 +23,6 @@ export default function Header({
   setPriceMin,
   priceMax,
   setPriceMax,
-  rangeValue,
-  setRangeValue,
   sortSwitch,
   setSortSwitch,
   activeSwitch,
@@ -56,8 +54,6 @@ export default function Header({
           setPriceMin={setPriceMin}
           priceMax={priceMax}
           setPriceMax={setPriceMax}
-          rangeValue={rangeValue}
-          setRangeValue={setRangeValue}
           sortSwitch={sortSwitch}
           setSortSwitch={setSortSwitch}
           activeSwitch={activeSwitch}
@@ -91,8 +87,6 @@ export default function Header({
             setPriceMin={setPriceMin}
             priceMax={priceMax}
             setPriceMax={setPriceMax}
-            rangeValue={rangeValue}
-            setRangeValue={setRangeValue}
             sortSwitch={sortSwitch}
             setSortSwitch={setSortSwitch}
             activeSwitch={activeSwitch}
