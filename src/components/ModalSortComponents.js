@@ -2,7 +2,7 @@ import React from "react";
 import AscDes from "./AscDes";
 import RangeSlider from "./RangeSlider";
 
-const SortComponents = ({
+const ModalSortComponents = ({
   sort,
   setSort,
   priceMin,
@@ -34,4 +34,4 @@ const SortComponents = ({
   );
 };
 
-export default SortComponents;
+export default ModalSortComponents;
