@@ -16,6 +16,7 @@ import {
   faAngleDown,
   faBars,
   faTimesCircle,
+  faLanguage,
 } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 library.add(
@@ -26,7 +27,8 @@ library.add(
   faBars,
   faTimesCircle,
   faAngleUp,
-  faAngleDown
+  faAngleDown,
+  faLanguage
 );
 
 function App() {

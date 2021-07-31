@@ -114,8 +114,8 @@ body {
 .header .modal-menu {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 380px;
+  justify-content: space-evenly;
+  width: 500px;
 }
 
 .header li:hover {
@@ -171,6 +171,10 @@ body {
   position: relative;
   display: flex;
   align-items: center;
+}
+
+.form-language {
+  width: 70px;
 }
 
 .menu-bars,
