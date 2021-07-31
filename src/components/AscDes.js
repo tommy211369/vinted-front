@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import Switch from "react-switch";
 
 const AscDes = ({
-  sort,
   setSort,
   sortSwitch,
   setSortSwitch,
@@ -51,31 +50,6 @@ const AscDes = ({
           <span className={sortSwitch === true && "desc"}>down</span>
         </label>
       )}
-
-      {/* <div>
-        <input
-          type="radio"
-          onChange={() => {
-            setSort("price-asc");
-          }}
-          name="sort"
-          id="asc"
-          value={sort}
-        />
-        <label for="asc">Croissant</label>
-      </div>
-      <div>
-        <input
-          type="radio"
-          onChange={() => {
-            setSort("price-desc");
-          }}
-          name="sort"
-          id="desc"
-          value={sort}
-        />
-        <label for="desc">Décroissant</label>
-        </div> */}
     </div>
   );
 };
