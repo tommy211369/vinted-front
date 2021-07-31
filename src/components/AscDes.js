@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Switch from "react-switch";
 
 const AscDes = ({
@@ -35,7 +36,9 @@ const AscDes = ({
 
       {activeSwitch && (
         <label>
-          <span className={sortSwitch === false && "asc"}>up</span>
+          <span className={sortSwitch === false && "asc"}>
+            <FontAwesomeIcon icon="angle-up" />
+          </span>
           <Switch
             onChange={() => {
               setSortSwitch(!sortSwitch);
@@ -47,7 +50,9 @@ const AscDes = ({
             checkedIcon={false}
             disabled={!activeSwitch}
           />
-          <span className={sortSwitch === true && "desc"}>down</span>
+          <span className={sortSwitch === true && "desc"}>
+            <FontAwesomeIcon icon="angle-down" />
+          </span>
         </label>
       )}
     </div>

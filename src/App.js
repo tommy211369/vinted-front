@@ -13,6 +13,8 @@ import {
   faSquare,
   faQuestionCircle,
   faSortDown,
+  faAngleUp,
+  faAngleDown,
   faBars,
   faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
@@ -23,7 +25,9 @@ library.add(
   faSquare,
   faSortDown,
   faBars,
-  faTimesCircle
+  faTimesCircle,
+  faAngleUp,
+  faAngleDown
 );
 
 function App() {
