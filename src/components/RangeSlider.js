@@ -22,6 +22,7 @@ const RangeSlider = ({ priceMin, priceMax, setPriceMin, setPriceMax }) => {
         valueLabelDisplay="auto"
         aria-labelledby="range-slider"
         max={300}
+        style={{ color: "#3bc1c8" }}
       />
     </div>
   );

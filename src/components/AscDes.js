@@ -27,6 +27,7 @@ const AscDes = ({
       <div className="checkbox">
         <input
           type="checkbox"
+          style={{ color: "#3bc1c8" }}
           onChange={() => {
             setActiveSwitch(!activeSwitch);
           }}
@@ -37,7 +38,7 @@ const AscDes = ({
 
       {activeSwitch && (
         <label>
-          <span className={sortSwitch === false && "asc"}>
+          <span className={sortSwitch === false && "blue"}>
             <FontAwesomeIcon icon="angle-up" />
           </span>
           <Switch
@@ -45,13 +46,13 @@ const AscDes = ({
               setSortSwitch(!sortSwitch);
             }}
             checked={sortSwitch}
-            onColor="#1AB245"
-            offColor="#2C87F7"
+            onColor="#3bc1c8"
+            offColor="#3bc1c8"
             uncheckedIcon={false}
             checkedIcon={false}
             disabled={!activeSwitch}
           />
-          <span className={sortSwitch === true && "desc"}>
+          <span className={sortSwitch === true && "blue"}>
             <FontAwesomeIcon icon="angle-down" />
           </span>
         </label>

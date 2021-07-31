@@ -113,12 +113,8 @@ body {
   width: 120px;
 }
 
-.asc-desc .asc {
-  color: #2c87f7;
-}
-
-.asc-desc .desc {
-  color: #1ab245;
+.asc-desc .blue {
+  color: #3bc1c8;
 }
 
 .slider {
