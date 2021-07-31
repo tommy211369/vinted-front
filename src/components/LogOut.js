@@ -13,7 +13,7 @@ export default function LogOut({ setUserToken, dataUsername }) {
   };
   return (
     <li onClick={handleDeleteToken} className="logout">
-      Se déconnecter - {dataUsername}
+      Se déconnecter
     </li>
   );
 }

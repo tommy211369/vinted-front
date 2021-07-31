@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import LogOut from "./LogOut";
 import LogInSignOut from "./LogInSignOut";
 import FormControl from "@material-ui/core/FormControl";
@@ -26,7 +27,16 @@ export default function Menu({
         <LogInSignOut setModalMenu={setModalMenu} />
       )}
 
-      <li className="sell-now">Vends maintenant</li>
+      {userToken !== null ? (
+        <Link to="/sell" className="sell-now">
+          Vends maintenant
+        </Link>
+      ) : (
+        <Link to="/login" className="sell-now">
+          Vends maintenant
+        </Link>
+      )}
+
       <li className="languages">
         {" "}
         <FormControl variant="outlined" className="form-language">
