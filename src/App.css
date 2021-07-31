@@ -242,7 +242,24 @@ body {
   background-color: white;
   width: 30%;
   height: 250px;
-  top: 60px;
+  top: 140px;
+  padding: 10px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.header .modal-menu-nosearch {
+  visibility: hidden;
+  position: absolute;
+  box-shadow: 0 0 5px 0 #3bc1c8;
+  z-index: 1000;
+  background-color: white;
+  width: 30%;
+  height: 250px;
+  top: 90px;
+  left: 35%;
   padding: 10px;
   border-radius: 7px;
   display: flex;
@@ -650,7 +667,8 @@ body {
     display: block;
   }
 
-  .header .modal-menu {
+  .header .modal-menu,
+  .header .modal-menu-nosearch {
     visibility: visible;
   }
 
@@ -671,6 +689,17 @@ body {
   }
 }
 
+@media (max-width: 970px) {
+  .header .wrapper-no-search {
+    width: 90%;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+}
+
 @media (max-width: 960px) {
   .search {
     display: none;
@@ -683,6 +712,10 @@ body {
   .modal-search-bar,
   .modal-sort-components {
     visibility: visible;
+  }
+
+  .header .modal-menu {
+    top: 60px;
   }
 }
 
@@ -735,7 +768,8 @@ body {
 }
 
 @media (max-width: 594px) {
-  .header .modal-menu {
+  .header .modal-menu,
+  .header .modal-menu-nosearch {
     width: 50%;
   }
 }
@@ -793,9 +827,15 @@ body {
 }
 
 @media (max-width: 375px) {
-  .header .modal-menu {
+  .header .modal-menu,
+  .header .modal-menu-nosearch {
     width: 70%;
   }
+
+  .header .modal-menu-nosearch {
+    left: 50px;
+  }
+
   .offerDetails .content {
     width: 100%;
     background-color: #3bc1c8;

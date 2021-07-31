@@ -33,7 +33,7 @@ export default function Header({
   return (
     <div className="header">
       <div className={displaySearch ? "wrapper" : "wrapper-no-search"}>
-        {!modalSearchBar ? (
+        {!modalSearchBar && displaySearch ? (
           <FontAwesomeIcon
             icon="search"
             className="menu-search-icon"
@@ -108,6 +108,7 @@ export default function Header({
             userToken={userToken}
             setUserToken={setUserToken}
             dataUsername={dataUsername}
+            displaySearch={displaySearch}
           />
         ) : (
           <Fragment></Fragment>

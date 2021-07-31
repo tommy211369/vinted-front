@@ -13,6 +13,7 @@ export default function ModalMenu({
   userToken,
   setUserToken,
   dataUsername,
+  displaySearch,
 }) {
   const [language, setLanguage] = useState("FR");
 
@@ -21,7 +22,7 @@ export default function ModalMenu({
   };
 
   return (
-    <ul className="modal-menu">
+    <ul className={displaySearch ? "modal-menu" : "modal-menu-nosearch"}>
       {userToken ? (
         <LogOut setUserToken={setUserToken} dataUsername={dataUsername} />
       ) : (

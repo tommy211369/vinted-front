@@ -6,6 +6,7 @@ const Sell = ({ setDisplaySearch }) => {
   }, [setDisplaySearch]);
   return (
     <div className="sell">
+      {/* pas encore fonctionnelle */}
       <h1>Vendez vos produits !</h1>
     </div>
   );
