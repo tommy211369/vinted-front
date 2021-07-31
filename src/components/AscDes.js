@@ -33,16 +33,6 @@ const AscDes = ({
             setActiveSwitch(!activeSwitch);
           }}
         />
-        {/* 
-        <input
-          type="checkbox"
-          style={{ color: "#3bc1c8" }}
-          onChange={() => {
-            setActiveSwitch(!activeSwitch);
-          }}
-          checked={activeSwitch}
-        />
-        */}
         <p>Trier par prix</p>
       </div>
 
