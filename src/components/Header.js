@@ -25,6 +25,10 @@ export default function Header({
   setPriceMax,
   rangeValue,
   setRangeValue,
+  sortSwitch,
+  setSortSwitch,
+  activeSwitch,
+  setActiveSwitch,
 }) {
   return (
     <div className="header">
@@ -54,6 +58,10 @@ export default function Header({
           setPriceMax={setPriceMax}
           rangeValue={rangeValue}
           setRangeValue={setRangeValue}
+          sortSwitch={sortSwitch}
+          setSortSwitch={setSortSwitch}
+          activeSwitch={activeSwitch}
+          setActiveSwitch={setActiveSwitch}
         />
 
         <Menu
@@ -85,6 +93,10 @@ export default function Header({
             setPriceMax={setPriceMax}
             rangeValue={rangeValue}
             setRangeValue={setRangeValue}
+            sortSwitch={sortSwitch}
+            setSortSwitch={setSortSwitch}
+            activeSwitch={activeSwitch}
+            setActiveSwitch={setActiveSwitch}
           />
         ) : (
           <Fragment></Fragment>

@@ -82,6 +82,34 @@ body {
   width: 60px;
 }
 
+.asc-desc .checkbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.asc-desc .checkbox p {
+  font-size: 12px;
+}
+
+.asc-desc label {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+}
+
+.asc-desc .asc {
+  color: #2c87f7;
+}
+
+.asc-desc .desc {
+  color: #1ab245;
+}
+
 .header ul,
 .header .modal-menu {
   display: flex;

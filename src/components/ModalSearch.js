@@ -14,6 +14,10 @@ export default function ModalSearch({
   setPriceMax,
   rangeValue,
   setRangeValue,
+  sortSwitch,
+  setSortSwitch,
+  activeSwitch,
+  setActiveSwitch,
 }) {
   return (
     <div className="modal-search-bar">
@@ -36,6 +40,10 @@ export default function ModalSearch({
         setPriceMax={setPriceMax}
         rangeValue={rangeValue}
         setRangeValue={setRangeValue}
+        sortSwitch={sortSwitch}
+        setSortSwitch={setSortSwitch}
+        activeSwitch={activeSwitch}
+        setActiveSwitch={setActiveSwitch}
       />
 
       <FontAwesomeIcon
