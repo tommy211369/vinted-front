@@ -4,7 +4,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 export default function Spinner() {
   return (
     <div className="spinner">
-      <CircularProgress />
+      <CircularProgress style={{ color: "#3bc1c8" }} />
     </div>
   );
 }
