@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Checkbox from "@material-ui/core/Checkbox";
 
 import Switch from "react-switch";
 
@@ -25,6 +26,14 @@ const AscDes = ({
   return (
     <div className="asc-desc">
       <div className="checkbox">
+        <Checkbox
+          checked={activeSwitch}
+          style={{ color: "#3bc1c8" }}
+          onChange={() => {
+            setActiveSwitch(!activeSwitch);
+          }}
+        />
+        {/* 
         <input
           type="checkbox"
           style={{ color: "#3bc1c8" }}
@@ -33,6 +42,7 @@ const AscDes = ({
           }}
           checked={activeSwitch}
         />
+        */}
         <p>Trier par prix</p>
       </div>
 
