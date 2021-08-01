@@ -30,11 +30,23 @@ export default function ModalMenu({
       )}
 
       {userToken !== null ? (
-        <Link to="/sell" className="sell-now">
+        <Link
+          to="/sell"
+          className="sell-now"
+          onClick={() => {
+            setModalMenu(false);
+          }}
+        >
           Vends maintenant
         </Link>
       ) : (
-        <Link to="/login" className="sell-now">
+        <Link
+          to="/login"
+          className="sell-now"
+          onClick={() => {
+            setModalMenu(false);
+          }}
+        >
           Vends maintenant
         </Link>
       )}
