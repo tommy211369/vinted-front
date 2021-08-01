@@ -21,6 +21,10 @@ export default function Home({
   // at component loading
   useEffect(() => {
     setDisplaySearch(true);
+
+    if (nbrItems === 20) {
+      setPage(1);
+    }
     const fetchOffers = async () => {
       try {
         const response = await axios.get(
@@ -35,7 +39,7 @@ export default function Home({
     };
 
     fetchOffers();
-  }, [nbrItems, page, title, sort, priceMin, priceMax]);
+  }, [nbrItems, page, title, sort, priceMin, priceMax, setDisplaySearch]);
 
   return isLoading ? (
     <Spinner />

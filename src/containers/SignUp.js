@@ -8,7 +8,9 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
   const [picture, setPicture] = useState("");
+  const [displayError, setDisplayError] = useState(false);
 
   useEffect(() => {
     setDisplaySearch(false);
@@ -32,6 +34,10 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
     setPassword(e.target.value);
   };
 
+  const handleConfirm = (e) => {
+    setConfirm(e.target.value);
+  };
+
   const handlePicture = (e) => {
     console.log(e.target.files[0]);
     setPicture(e.target.files[0]);
@@ -50,17 +56,23 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // requete axios post:
-      const response = await axios.post(
-        "https://vinted-back-tommy.herokuapp.com/user/signup",
-        userData
-      );
-      setDataUsername(response.data.resNewUser.account.username);
-      setToken(response.data.resNewUser.token);
-      const userToken = token;
-      // enregistrer le token dans un cookie :
-      setUser(userToken);
-      // rediriger vers home page :
+      if (password !== confirm) {
+        setDisplayError(true);
+      } else {
+        setDisplayError(false);
+        // requete axios post:
+        const response = await axios.post(
+          "https://vinted-back-tommy.herokuapp.com/user/signup",
+          userData
+        );
+        setDataUsername(response.data.resNewUser.account.username);
+        setToken(response.data.resNewUser.token);
+        const userToken = token;
+        // enregistrer le token dans un cookie :
+        setUser(userToken);
+        // rediriger vers home page :
+      }
+
       history.push("/");
     } catch (error) {
       console.log(error.message);
@@ -71,6 +83,12 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
     <div>
       <form onSubmit={handleSubmit} className="form">
         <h2>S'inscrire</h2>
+        {displayError && (
+          <p>
+            Le mot de passe et la confirmation sont différents, veuillez
+            réessayer
+          </p>
+        )}
         <input
           type="text"
           placeholder="Nom d'utilisateur"
@@ -93,6 +111,12 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
           type="password"
           placeholder="Mot de passe"
           onChange={handlePassword}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Confirmer le mot de passe"
+          onChange={handleConfirm}
           required
         />
         <input type="file" onChange={handlePicture} accept="image/*" />
