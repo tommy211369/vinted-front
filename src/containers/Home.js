@@ -10,6 +10,7 @@ export default function Home({
   priceMin,
   priceMax,
   setDisplaySearch,
+  userToken,
 }) {
   const [data, setData] = useState({}); // number of offers
   const [isLoading, setIsLoading] = useState(true);
@@ -38,14 +39,24 @@ export default function Home({
     };
 
     fetchOffers();
-  }, [nbrItems, page, title, sort, priceMin, priceMax, setDisplaySearch]);
+  }, [
+    nbrItems,
+    page,
+    title,
+    sort,
+    priceMin,
+    priceMax,
+    setDisplaySearch,
+    count,
+  ]);
 
   return isLoading ? (
     <Spinner />
   ) : (
     <div>
-      <Hero />
+      <Hero userToken={userToken} />
       <ItemsList
+        userToken={userToken}
         data={data}
         count={count}
         nbrItems={nbrItems}
