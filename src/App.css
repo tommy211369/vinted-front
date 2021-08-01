@@ -450,7 +450,8 @@ body {
   color: #3bc1c8;
 }
 
-.placards p:hover {
+.placards p:hover,
+.hero-placards-2 p:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -468,7 +469,7 @@ body {
 }
 
 .hero-placards-2 div {
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
   box-sizing: border-box;
   padding: 12px 8px;
