@@ -21,7 +21,7 @@ export default function Home({
   useEffect(() => {
     setDisplaySearch(true);
 
-    if (nbrItems === 20) {
+    if (nbrItems === count) {
       setPage(1);
     }
     const fetchOffers = async () => {
