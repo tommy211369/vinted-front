@@ -33,12 +33,7 @@ export default function ItemsList({
           />
 
           {/* choose page  */}
-          <Pages
-            // selectPage={selectPage}
-            count={count}
-            nbrItems={nbrItems}
-            setPage={setPage}
-          />
+          <Pages count={count} nbrItems={nbrItems} setPage={setPage} />
         </div>
 
         {/* display offers */}

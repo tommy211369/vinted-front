@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Cookies from "js-cookie";
 import Spinner from "../components/Spinner";
 import Hero from "../components/Hero";
 import ItemsList from "../components/ItemsList";
@@ -16,7 +15,7 @@ export default function Home({
   const [isLoading, setIsLoading] = useState(true);
   const [count, setCount] = useState({}); // offers total
   const [nbrItems, setNbrItems] = useState(5); // number of offers to display
-  const [page, setPage] = useState(1); // page choose
+  const [page, setPage] = useState(1); // page chosen
 
   // at component loading
   useEffect(() => {

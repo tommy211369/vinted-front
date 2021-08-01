@@ -325,7 +325,7 @@ body {
 /* LOGIN / SIGNUP */
 .form {
   width: 20%;
-  margin: 80px auto;
+  margin: 30px auto;
   display: flex;
   flex-direction: column;
 }
@@ -342,7 +342,7 @@ body {
   border: none;
   border-bottom: 1px solid #dd9999;
   padding: 10px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .newsletter {

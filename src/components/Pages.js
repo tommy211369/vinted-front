@@ -1,7 +1,7 @@
 import React from "react";
 
-const Pages = ({ /*selectPage,*/ count, nbrItems, setPage }) => {
-  // pour l'affichage des pages
+const Pages = ({ count, nbrItems, setPage }) => {
+  // display pages number
   const pagesTab = [];
   let updatePages = count / nbrItems; // ex: 20 / 10 = 2
   for (let i = 1; i <= Math.ceil(updatePages); i++) {

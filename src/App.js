@@ -42,7 +42,7 @@ function App() {
   const [priceMin, setPriceMin] = useState(""); // value of priceMin
   const [priceMax, setPriceMax] = useState(""); // value of priceMax
   const [sortSwitch, setSortSwitch] = useState("");
-  const [activeSwitch, setActiveSwitch] = useState(false);
+  const [activeSwitch, setActiveSwitch] = useState(false); // sort button
   const [displaySearch, setDisplaySearch] = useState(true); // display the search bar or not
 
   // set cookie token
