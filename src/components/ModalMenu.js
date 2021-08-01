@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import LogOut from "./LogOut";
 import LogInSignOut from "./LogInSignOut";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import InputLabel from "@material-ui/core/InputLabel";
+import Languages from "./Languages";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function ModalMenu({
@@ -15,12 +12,6 @@ export default function ModalMenu({
   dataUsername,
   displaySearch,
 }) {
-  const [language, setLanguage] = useState("FR");
-
-  const handleChange = (e) => {
-    setLanguage(e.target.value);
-  };
-
   return (
     <ul className={displaySearch ? "modal-menu" : "modal-menu-nosearch"}>
       {userToken ? (
@@ -52,21 +43,7 @@ export default function ModalMenu({
       )}
 
       <li className="languages">
-        <FormControl variant="outlined" className="form-language">
-          <InputLabel id="demo-simple-select-outlined-label">
-            <FontAwesomeIcon icon="language" />
-          </InputLabel>
-          <Select
-            labelId="demo-simple-select-outlined-label"
-            id="demo-simple-select-outlined"
-            value={language}
-            onChange={handleChange}
-            label="Age"
-          >
-            <MenuItem value={"FR"}>FR</MenuItem>
-            <MenuItem value={"EN"}>EN</MenuItem>
-          </Select>
-        </FormControl>
+        <Languages />
       </li>
       <FontAwesomeIcon
         icon="times-circle"
