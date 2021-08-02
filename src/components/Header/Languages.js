@@ -13,7 +13,10 @@ const Languages = () => {
   };
   return (
     <FormControl variant="outlined" className="form-language">
-      <InputLabel id="demo-simple-select-outlined-label">
+      <InputLabel
+        id="demo-simple-select-outlined-label"
+        style={{ color: "#3BC1C8" }}
+      >
         <FontAwesomeIcon icon="language" />
       </InputLabel>
       <Select
