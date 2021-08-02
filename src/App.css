@@ -187,11 +187,6 @@ body {
   background-color: white;
 }
 
-.sell h1 {
-  width: max-content;
-  margin: 30px auto;
-}
-
 .languages {
   position: relative;
   display: flex;
@@ -390,6 +385,46 @@ body {
   font-size: 14px;
   text-align: center;
   margin-bottom: 10px;
+}
+
+/* SELL NOW */
+.sell h1 {
+  width: max-content;
+  margin: 30px auto;
+}
+
+.offer-form {
+  display: flex;
+  margin: 0 auto;
+  width: 30%;
+  height: 400px;
+  flex-direction: column;
+}
+
+.offer-form input,
+.offer-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.offer-form label {
+  font-size: 13px;
+}
+
+.offer-form textarea {
+  height: 100px;
+  resize: none;
+  font-family: inherit;
+}
+
+.offer-form input[type="submit"] {
+  background-color: #3bc1c8;
+  color: white;
+  margin: 0 auto;
+  width: 60%;
 }
 
 /* HERO */

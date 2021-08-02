@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
+import OfferForm from "../components/SellNow/OfferForm";
 
-const Sell = ({ setDisplaySearch }) => {
+const Publish = ({ setDisplaySearch }) => {
   useEffect(() => {
     setDisplaySearch(false);
   }, [setDisplaySearch]);
@@ -8,8 +9,9 @@ const Sell = ({ setDisplaySearch }) => {
     <div className="sell">
       {/* pas encore fonctionnelle */}
       <h1>Vendez vos produits !</h1>
+      <OfferForm />
     </div>
   );
 };
 
-export default Sell;
+export default Publish;

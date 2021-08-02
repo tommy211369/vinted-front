@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import Offer from "./containers/Offer";
 import SignUp from "./containers/SignUp";
 import LogIn from "./containers/LogIn";
-import Sell from "./containers/SellNow";
+import Publish from "./containers/Publish";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faSearch,
@@ -96,7 +96,7 @@ function App() {
           />
         </Route>
         <Route path="/sell">
-          <Sell
+          <Publish
             setUser={setUser}
             dataUsername={dataUsername}
             setDataUsername={setDataUsername}
