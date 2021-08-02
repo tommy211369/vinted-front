@@ -408,6 +408,11 @@ body {
   flex-direction: column;
 }
 
+.offer-form .add-picture {
+  width: 20%;
+  margin: 30px auto;
+}
+
 .offer-form > div {
   box-shadow: 0 0 2px grey;
   margin-bottom: 20px;
@@ -448,16 +453,16 @@ body {
 
 .offer-form .offer-price {
   display: flex;
+  width: 50%;
   flex-direction: column;
 }
 
 .offer-form .offer-price input[type="number"] {
-  width: 200px;
+  width: 100%;
 }
 
 .offer-form .offer-price div {
   display: flex;
-  width: 500px;
   margin-top: 30px;
 }
 
@@ -468,6 +473,7 @@ body {
 
 .offer-form .offer-price label {
   width: 100%;
+  font-size: 12px;
 }
 
 .offer-form input[type="submit"] {
@@ -1000,6 +1006,20 @@ body {
 
   .modal-sort-components .asc-desc {
     width: 100%;
+  }
+
+  .offer-form .input-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .offer-form .add-picture {
+    margin: 30px 0;
+  }
+
+  .offer-form .input-line label {
+    margin-bottom: 20px;
   }
 }
 
