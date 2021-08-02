@@ -7,8 +7,7 @@ const Publish = ({ setDisplaySearch, userToken, dataUsername }) => {
   }, [setDisplaySearch, userToken]);
   return (
     <div className="sell">
-      <h1>Bonjour {dataUsername} !</h1>
-      <h2>Vendez vos produits !</h2>
+      <h2>Vends tes produits !</h2>
       <OfferForm userToken={userToken} />
     </div>
   );
