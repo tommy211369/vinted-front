@@ -23,11 +23,11 @@ const OfferForm = ({ userToken }) => {
       // ajouter des paires clé/valeur
       formData.append("title", offerTitle);
       formData.append("price", offerPrice);
+      formData.append("condition", offerCondition);
+      formData.append("city", offerCity);
       formData.append("brand", offerBrand);
       formData.append("size", offerSize);
-      formData.append("condition", offerCondition);
       formData.append("color", offerColor);
-      formData.append("city", offerCity);
       formData.append("picture", offerPicture);
       formData.append("description", offerDescription);
 
@@ -36,7 +36,7 @@ const OfferForm = ({ userToken }) => {
         "https://vinted-back-tommy.herokuapp.com/offer/publish",
         formData,
         {
-          header: {
+          headers: {
             authorization: `Bearer ${userToken}`,
           },
         }
