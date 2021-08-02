@@ -27,7 +27,7 @@ export default function Offer({ setDisplaySearch }) {
     };
 
     fetchData();
-  }, [id]);
+  }, [id, setDisplaySearch]);
 
   return isLoading ? (
     <Spinner />
