@@ -1,6 +1,6 @@
 import React from "react";
 import AscDes from "./AscDes";
-import RangeSlider from "../RangeSlider";
+import RangeSlider from "./RangeSlider";
 
 const ModalSortComponents = ({
   sort,

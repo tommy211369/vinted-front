@@ -42,10 +42,10 @@ function App() {
   const [priceMin, setPriceMin] = useState(""); // value of priceMin
   const [priceMax, setPriceMax] = useState(""); // value of priceMax
   const [sortSwitch, setSortSwitch] = useState(""); // sort by asc price or desc price
-  const [activeSwitch, setActiveSwitch] = useState(false); // sort button
+  const [activeSwitch, setActiveSwitch] = useState(false); // sort activation button
   const [displaySearch, setDisplaySearch] = useState(true); // display the search bar or not
 
-  // set cookie token
+  // store token as cookie
   const setUser = (token) => {
     setUserToken(token);
     Cookies.set("userToken", token);
@@ -55,8 +55,8 @@ function App() {
     <Router>
       <Header
         userToken={userToken}
-        dataUsername={dataUsername}
         setUserToken={setUserToken}
+        dataUsername={dataUsername}
         modalSearchBar={modalSearchBar}
         setModalSearchBar={setModalSearchBar}
         modalMenu={modalMenu}
