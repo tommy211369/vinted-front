@@ -1,20 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const OfferForm = ({ userToken }) => {
   const [offerTitle, setOfferTitle] = useState("");
-  const [offerDescription, setOfferDescription] = useState("");
   const [offerPrice, setOfferPrice] = useState();
   const [offerBrand, setOfferBrand] = useState();
   const [offerSize, setOfferSize] = useState();
   const [offerCondition, setOfferCondition] = useState();
   const [offerColor, setOfferColor] = useState();
   const [offerCity, setOfferCity] = useState();
-  const [offerPicture, setOfferPicture] = useState("");
-
-  useEffect(() => {
-    console.log("Token dans OfferForm : ", userToken);
-  }, [userToken]);
+  const [offerPicture, setOfferPicture] = useState({});
+  const [offerDescription, setOfferDescription] = useState("");
+  const [offerData, setOfferData] = useState();
 
   const handleSubmit = async (e) => {
     try {
@@ -25,7 +22,6 @@ const OfferForm = ({ userToken }) => {
 
       // ajouter des paires clé/valeur
       formData.append("title", offerTitle);
-      formData.append("description", offerDescription);
       formData.append("price", offerPrice);
       formData.append("brand", offerBrand);
       formData.append("size", offerSize);
@@ -33,6 +29,7 @@ const OfferForm = ({ userToken }) => {
       formData.append("color", offerColor);
       formData.append("city", offerCity);
       formData.append("picture", offerPicture);
+      formData.append("description", offerDescription);
 
       // requête vers le serveur
       const response = await axios.post(
@@ -46,10 +43,12 @@ const OfferForm = ({ userToken }) => {
       );
 
       console.log({ OfferFrontData: response.data });
+      setOfferData(response.data);
     } catch (error) {
       console.log({ OfferFrontError: error.message });
     }
   };
+
   return (
     <form className="offer-form" onSubmit={handleSubmit}>
       <input

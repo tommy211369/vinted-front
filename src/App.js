@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Home from "./containers/Home";
@@ -44,10 +44,6 @@ function App() {
   const [sortSwitch, setSortSwitch] = useState("");
   const [activeSwitch, setActiveSwitch] = useState(false); // sort button
   const [displaySearch, setDisplaySearch] = useState(true); // display the search bar or not
-
-  useEffect(() => {
-    console.log("Token dans App.js : ", userToken); // [object Object] when userToken not null
-  }, [userToken]);
 
   // set cookie token
   const setUser = (token) => {

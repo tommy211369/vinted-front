@@ -3,15 +3,13 @@ import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
 
 export default function LogIn({ setUser, setDataUsername, setDisplaySearch }) {
-  const [token, setToken] = useState({});
   const [unauthorized, setUnauthorized] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   useEffect(() => {
     setDisplaySearch(false);
-    console.log("Token dans Login : ", token); // lXdDu7XKNGmjKk88uuOUgFMzOSRznjHbMZOtLomyOW41xfFac8MBHBdmdEw2ONnl
-  }, [setDisplaySearch, token]);
+  }, [setDisplaySearch]);
 
   const history = useHistory();
 
@@ -39,9 +37,8 @@ export default function LogIn({ setUser, setDataUsername, setDisplaySearch }) {
 
       console.log(response.data);
       setDataUsername(response.data.resUser.account.username);
-      setToken(response.data.resUser.token);
       //   enregistrer le token dans un cookie :
-      setUser(token);
+      setUser(response.data.resUser.token);
       // rediriger vers home page :
       history.push("/");
     } catch (error) {

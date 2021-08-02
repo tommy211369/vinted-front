@@ -4,7 +4,6 @@ import OfferForm from "../components/Publish/OfferForm";
 const Publish = ({ setDisplaySearch, userToken }) => {
   useEffect(() => {
     setDisplaySearch(false);
-    console.log("Token dans Publish : ", userToken);
   }, [setDisplaySearch, userToken]);
   return (
     <div className="sell">
