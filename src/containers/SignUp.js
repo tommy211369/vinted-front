@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
+import Spinner from "../components/Spinner";
 import axios from "axios";
 
 export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
@@ -10,6 +11,7 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
   const [confirm, setConfirm] = useState("");
   const [picture, setPicture] = useState("");
   const [displayError, setDisplayError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setDisplaySearch(false);
@@ -38,7 +40,6 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
   };
 
   const handlePicture = (e) => {
-    console.log(e.target.files[0]);
     setPicture(e.target.files[0]);
   };
 
@@ -49,6 +50,8 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
         setDisplayError(true);
       } else {
         setDisplayError(false);
+
+        setIsLoading(true);
 
         const formData = new FormData();
 
@@ -67,6 +70,8 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
         setDataUsername(response.data.resNewUser.account.username);
         // enregistrer le token dans un cookie :
         setUser(response.data.resNewUser.token);
+
+        setIsLoading(false);
         // rediriger vers home page :
         history.push("/");
       }
@@ -75,7 +80,9 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
     }
   };
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <div>
       <form onSubmit={handleSubmit} className="form">
         <h2>S'inscrire</h2>
@@ -115,7 +122,7 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
           onChange={handleConfirm}
           required
         />
-        <input type="file" onChange={handlePicture} accept="image/*" />
+        <input type="file" onChange={handlePicture} accept="image/*" required />
 
         <div className="newsletter">
           <h4>
