@@ -3,7 +3,6 @@ import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
 
 export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
-  const [token, setToken] = useState({}); // token
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -43,16 +42,6 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
     setPicture(e.target.files[0]);
   };
 
-  const userData = {
-    username: username,
-    email: email,
-    phone: phone,
-    password: password,
-    picture: picture,
-  };
-
-  console.log(userData);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -60,16 +49,24 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
         setDisplayError(true);
       } else {
         setDisplayError(false);
+
+        const formData = new FormData();
+
+        formData.append("username", username);
+        formData.append("email", email);
+        formData.append("phone", phone);
+        formData.append("password", password);
+        formData.append("picture", picture);
+
         // requete axios post:
         const response = await axios.post(
           "https://vinted-back-tommy.herokuapp.com/user/signup",
-          userData
+          formData
         );
+
         setDataUsername(response.data.resNewUser.account.username);
-        setToken(response.data.resNewUser.token);
-        const userToken = token;
         // enregistrer le token dans un cookie :
-        setUser(userToken);
+        setUser(response.data.resNewUser.token);
         // rediriger vers home page :
         history.push("/");
       }
