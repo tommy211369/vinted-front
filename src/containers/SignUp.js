@@ -71,9 +71,8 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
         // enregistrer le token dans un cookie :
         setUser(userToken);
         // rediriger vers home page :
+        history.push("/");
       }
-
-      history.push("/");
     } catch (error) {
       console.log(error.message);
     }

@@ -397,7 +397,6 @@ body {
   display: flex;
   margin: 0 auto;
   width: 30%;
-  height: 400px;
   flex-direction: column;
 }
 
@@ -425,6 +424,13 @@ body {
   color: white;
   margin: 0 auto;
   width: 60%;
+}
+
+.offer-form input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #3bc1c8;
+  color: #3bc1c8;
 }
 
 /* HERO */

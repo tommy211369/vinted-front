@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import LogOut from "./LogOut";
 import LogInSignOut from "./LogInSignUp";
@@ -23,7 +23,7 @@ export default function Menu({
           Vends maintenant
         </Link>
       ) : (
-        <Link to="/sell" className="sell-now">
+        <Link to="/publish" className="sell-now">
           Vends maintenant
         </Link>
       )}

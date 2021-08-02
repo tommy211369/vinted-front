@@ -22,7 +22,7 @@ export default function ModalMenu({
 
       {userToken !== null ? (
         <Link
-          to="/sell"
+          to="/publish"
           className="sell-now"
           onClick={() => {
             setModalMenu(false);

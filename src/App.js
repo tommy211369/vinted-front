@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Home from "./containers/Home";
@@ -45,10 +45,14 @@ function App() {
   const [activeSwitch, setActiveSwitch] = useState(false); // sort button
   const [displaySearch, setDisplaySearch] = useState(true); // display the search bar or not
 
+  useEffect(() => {
+    console.log("Token dans App.js : ", userToken); // [object Object] when userToken not null
+  }, [userToken]);
+
   // set cookie token
   const setUser = (token) => {
-    Cookies.set("userToken", token);
     setUserToken(token);
+    Cookies.set("userToken", token);
   };
 
   return (
@@ -95,13 +99,8 @@ function App() {
             setDisplaySearch={setDisplaySearch}
           />
         </Route>
-        <Route path="/sell">
-          <Publish
-            setUser={setUser}
-            dataUsername={dataUsername}
-            setDataUsername={setDataUsername}
-            setDisplaySearch={setDisplaySearch}
-          />
+        <Route path="/publish">
+          <Publish userToken={userToken} setDisplaySearch={setDisplaySearch} />
         </Route>
 
         <Route path="/">

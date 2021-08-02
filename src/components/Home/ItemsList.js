@@ -18,7 +18,7 @@ export default function ItemsList({
         <div className="hero-placards-2">
           <h1>Prêts à faire du tri dans vos placards ?</h1>
           {userToken ? (
-            <Link to="/sell" className="hero-sell">
+            <Link to="/publish" className="hero-sell">
               <div>Vends maintenant</div>
             </Link>
           ) : (

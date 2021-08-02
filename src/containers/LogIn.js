@@ -10,7 +10,8 @@ export default function LogIn({ setUser, setDataUsername, setDisplaySearch }) {
 
   useEffect(() => {
     setDisplaySearch(false);
-  }, [setDisplaySearch]);
+    console.log("Token dans Login : ", token); // lXdDu7XKNGmjKk88uuOUgFMzOSRznjHbMZOtLomyOW41xfFac8MBHBdmdEw2ONnl
+  }, [setDisplaySearch, token]);
 
   const history = useHistory();
 
@@ -38,9 +39,8 @@ export default function LogIn({ setUser, setDataUsername, setDisplaySearch }) {
 
       setDataUsername(response.data.resUser.account.username);
       setToken(response.data.resUser.token);
-      const userToken = token;
       //   enregistrer le token dans un cookie :
-      setUser(userToken);
+      setUser(token);
       // rediriger vers home page :
       history.push("/");
     } catch (error) {
