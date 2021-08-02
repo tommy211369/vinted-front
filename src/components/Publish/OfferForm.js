@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import Spinner from "../Spinner";
 import axios from "axios";
 
 const OfferForm = ({ userToken }) => {
@@ -11,11 +13,15 @@ const OfferForm = ({ userToken }) => {
   const [offerCity, setOfferCity] = useState();
   const [offerPicture, setOfferPicture] = useState({});
   const [offerDescription, setOfferDescription] = useState("");
-  const [offerData, setOfferData] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
+
+      setIsLoading(true);
 
       // formData()
       const formData = new FormData();
@@ -42,14 +48,19 @@ const OfferForm = ({ userToken }) => {
         }
       );
 
-      console.log({ OfferFrontData: response.data });
-      setOfferData(response.data);
+      console.log(response.data.offer._id);
+      setIsLoading(false);
+
+      // redirect to offer page :
+      history.push(`/offer/${response.data.offer._id}`);
     } catch (error) {
       console.log({ OfferFrontError: error.message });
     }
   };
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <form className="offer-form" onSubmit={handleSubmit}>
       <input
         type="text"
@@ -57,6 +68,7 @@ const OfferForm = ({ userToken }) => {
         onChange={(e) => {
           setOfferTitle(e.target.value);
         }}
+        required
       />
       <input
         type="number"
@@ -64,6 +76,7 @@ const OfferForm = ({ userToken }) => {
         onChange={(e) => {
           setOfferPrice(e.target.value);
         }}
+        required
       />
       <input
         type="text"
@@ -71,6 +84,7 @@ const OfferForm = ({ userToken }) => {
         onChange={(e) => {
           setOfferBrand(e.target.value);
         }}
+        required
       />
       <input
         type="text"
@@ -78,6 +92,7 @@ const OfferForm = ({ userToken }) => {
         onChange={(e) => {
           setOfferSize(e.target.value);
         }}
+        required
       />
       <input
         type="text"
@@ -85,6 +100,7 @@ const OfferForm = ({ userToken }) => {
         onChange={(e) => {
           setOfferCondition(e.target.value);
         }}
+        required
       />
       <input
         type="text"
@@ -92,6 +108,7 @@ const OfferForm = ({ userToken }) => {
         onChange={(e) => {
           setOfferColor(e.target.value);
         }}
+        required
       />
       <input
         type="text"
@@ -99,6 +116,7 @@ const OfferForm = ({ userToken }) => {
         onChange={(e) => {
           setOfferCity(e.target.value);
         }}
+        required
       />
       <div>
         <label htmlFor="image">Insérez une image de l'article :</label>
@@ -110,6 +128,7 @@ const OfferForm = ({ userToken }) => {
           onChange={(e) => {
             setOfferPicture(e.target.files[0]);
           }}
+          required
         />
       </div>
       <textarea
@@ -117,6 +136,7 @@ const OfferForm = ({ userToken }) => {
         onChange={(e) => {
           setOfferDescription(e.target.value);
         }}
+        required
       ></textarea>
       <input type="submit" value="Publier l'article" />
     </form>

@@ -388,7 +388,8 @@ body {
 }
 
 /* SELL NOW */
-.sell h1 {
+.sell h1,
+.sell h2 {
   width: max-content;
   margin: 30px auto;
 }

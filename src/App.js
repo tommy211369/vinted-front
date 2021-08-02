@@ -96,7 +96,11 @@ function App() {
           />
         </Route>
         <Route path="/publish">
-          <Publish userToken={userToken} setDisplaySearch={setDisplaySearch} />
+          <Publish
+            userToken={userToken}
+            setDisplaySearch={setDisplaySearch}
+            dataUsername={dataUsername}
+          />
         </Route>
 
         <Route path="/">
