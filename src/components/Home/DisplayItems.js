@@ -1,6 +1,6 @@
 import React from "react";
 
-const DisplayItems = ({ setNbrItems, /*selectItems, */ nbrItems }) => {
+const DisplayItems = ({ setNbrItems, nbrItems }) => {
   return (
     <div>
       <p>Articles par pages :</p>
@@ -8,7 +8,6 @@ const DisplayItems = ({ setNbrItems, /*selectItems, */ nbrItems }) => {
         value={nbrItems}
         onChange={(e) => {
           setNbrItems(Number(e.target.value));
-          // selectItems(Number(e.target.value));
         }}
       >
         <option value="5">5</option>

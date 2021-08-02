@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import Home from "./containers/Home";
 import Cookies from "js-cookie";
 import Offer from "./containers/Offer";

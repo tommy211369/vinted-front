@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import LogOut from "./LogOut";
-import LogInSignOut from "./LogInSignOut";
+import LogInSignOut from "./LogInSignUp";
 import Languages from "./Languages";
 
 export default function Menu({

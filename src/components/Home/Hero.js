@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import hero from "../assets/img/hero.jpeg";
-import heroEffect from "../assets/img/hero-effect.svg";
+import hero from "../../assets/img/hero.jpeg";
+import heroEffect from "../../assets/img/hero-effect.svg";
 
 export default function Hero({ userToken }) {
   return (

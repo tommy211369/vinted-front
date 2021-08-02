@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function LogInSignOut({ setModalMenu }) {
+export default function LogInSignUp({ setModalMenu }) {
   return (
     <li className="login-signup">
       <Link

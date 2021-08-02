@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Spinner from "../components/Spinner";
-import OfferDetails from "../components/OfferDetails";
+import OfferDetails from "../components/Offer/OfferDetails";
 
 import { useParams } from "react-router-dom";
 import axios from "axios";

@@ -1,8 +1,8 @@
 import React from "react";
 import AscDes from "./AscDes";
-import RangeSlider from "./RangeSlider";
+import RangeSlider from "../RangeSlider";
 
-const ModalSortComponents = ({
+const SortComponents = ({
   sort,
   setSort,
   priceMin,
@@ -15,7 +15,7 @@ const ModalSortComponents = ({
   setActiveSwitch,
 }) => {
   return (
-    <div className="modal-sort-components">
+    <div className="sort-components">
       <AscDes
         sort={sort}
         setSort={setSort}
@@ -34,4 +34,4 @@ const ModalSortComponents = ({
   );
 };
 
-export default ModalSortComponents;
+export default SortComponents;

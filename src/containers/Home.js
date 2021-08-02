@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Spinner from "../components/Spinner";
-import Hero from "../components/Hero";
-import ItemsList from "../components/ItemsList";
+import Hero from "../components/Home/Hero";
+import ItemsList from "../components/Home/ItemsList";
 import axios from "axios";
 
 export default function Home({
