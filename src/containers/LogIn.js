@@ -37,6 +37,7 @@ export default function LogIn({ setUser, setDataUsername, setDisplaySearch }) {
         userData
       );
 
+      console.log(response.data);
       setDataUsername(response.data.resUser.account.username);
       setToken(response.data.resUser.token);
       //   enregistrer le token dans un cookie :

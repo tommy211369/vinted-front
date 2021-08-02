@@ -36,7 +36,7 @@ const OfferForm = ({ userToken }) => {
 
       // requête vers le serveur
       const response = await axios.post(
-        "http://localhost:4000/offer/publish",
+        "https://vinted-back-tommy.herokuapp.com/offer/publish",
         formData,
         {
           header: {
