@@ -33,15 +33,15 @@ library.add(
 );
 
 function App() {
-  const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
+  const [userToken, setUserToken] = useState(Cookies.get("userToken") || null); // token storage when login or signup
   const [dataUsername, setDataUsername] = useState({}); // user name
-  const [modalSearchBar, setModalSearchBar] = useState(false);
-  const [modalMenu, setModalMenu] = useState(false);
+  const [modalSearchBar, setModalSearchBar] = useState(false); // search components for smaller devices
+  const [modalMenu, setModalMenu] = useState(false); // nav components for smaller devices
   const [title, setTitle] = useState(""); // value of title
   const [sort, setSort] = useState(""); // value of sort
   const [priceMin, setPriceMin] = useState(""); // value of priceMin
   const [priceMax, setPriceMax] = useState(""); // value of priceMax
-  const [sortSwitch, setSortSwitch] = useState("");
+  const [sortSwitch, setSortSwitch] = useState(""); // sort by asc price or desc price
   const [activeSwitch, setActiveSwitch] = useState(false); // sort button
   const [displaySearch, setDisplaySearch] = useState(true); // display the search bar or not
 
