@@ -20,9 +20,9 @@ export default function ModalMenu({
         <LogInSignOut setModalMenu={setModalMenu} />
       )}
 
-      {userToken !== null ? (
+      {userToken === null ? (
         <Link
-          to="/publish"
+          to="/login"
           className="sell-now"
           onClick={() => {
             setModalMenu(false);
@@ -32,7 +32,7 @@ export default function ModalMenu({
         </Link>
       ) : (
         <Link
-          to="/login"
+          to="/publish"
           className="sell-now"
           onClick={() => {
             setModalMenu(false);

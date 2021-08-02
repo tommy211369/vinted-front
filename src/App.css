@@ -464,6 +464,7 @@ body {
 .offer-form .offer-price div {
   display: flex;
   margin-top: 30px;
+  align-items: center;
 }
 
 .offer-form .offer-price input[type="checkbox"] {

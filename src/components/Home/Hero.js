@@ -11,12 +11,12 @@ export default function Hero({ userToken }) {
       <div className="placards">
         <h1>Prêts à faire du tri dans vos placards ?</h1>
 
-        {userToken ? (
-          <Link to="/publish" className="hero-sell">
+        {userToken === null ? (
+          <Link to="/login" className="hero-sell">
             <div>Vends maintenant</div>
           </Link>
         ) : (
-          <Link to="/login" className="hero-sell">
+          <Link to="/publish" className="hero-sell">
             <div>Vends maintenant</div>
           </Link>
         )}
