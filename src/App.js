@@ -38,8 +38,10 @@ library.add(
 );
 
 function App() {
-  const [userToken, setUserToken] = useState(Cookies.get("userToken") || null); // token storage when login or signup
-  const [dataUsername, setDataUsername] = useState({}); // user name
+  const [userToken, setUserToken] = useState(Cookies.get("userToken") || null); // token stored when login or signup
+  const [dataUsername, setDataUsername] = useState(
+    Cookies.get("username") || null
+  ); // user name stored when login or signup
   const [modalSearchBar, setModalSearchBar] = useState(false); // search components for smaller devices
   const [modalMenu, setModalMenu] = useState(false); // nav components for smaller devices
   const [title, setTitle] = useState(""); // value of title
@@ -55,6 +57,12 @@ function App() {
   const setUser = (token) => {
     setUserToken(token);
     Cookies.set("userToken", token);
+  };
+
+  // store username as cookie
+  const setUserNameCookie = (username) => {
+    setDataUsername(username);
+    Cookies.set("username", username);
   };
 
   let totalCart = 0;
@@ -86,6 +94,7 @@ function App() {
         userToken={userToken}
         setUserToken={setUserToken}
         dataUsername={dataUsername}
+        setDataUsername={setDataUsername}
         modalSearchBar={modalSearchBar}
         setModalSearchBar={setModalSearchBar}
         modalMenu={modalMenu}
@@ -104,6 +113,7 @@ function App() {
         setActiveSwitch={setActiveSwitch}
         displaySearch={displaySearch}
         cart={cart}
+        setCart={setCart}
         totalCart={totalCart}
         removeFromCart={removeFromCart}
       />
@@ -118,16 +128,14 @@ function App() {
         <Route path="/signup">
           <SignUp
             setUser={setUser}
-            dataUsername={dataUsername}
-            setDataUsername={setDataUsername}
+            setUserNameCookie={setUserNameCookie}
             setDisplaySearch={setDisplaySearch}
           />
         </Route>
         <Route path="/login">
           <LogIn
             setUser={setUser}
-            dataUsername={dataUsername}
-            setDataUsername={setDataUsername}
+            setUserNameCookie={setUserNameCookie}
             setDisplaySearch={setDisplaySearch}
           />
         </Route>
@@ -143,6 +151,8 @@ function App() {
             userToken={userToken}
             setDisplaySearch={setDisplaySearch}
             dataUsername={dataUsername}
+            cart={cart}
+            setCart={setCart}
           />
         </Route>
 

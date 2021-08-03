@@ -3,7 +3,11 @@ import { useHistory, Link } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import axios from "axios";
 
-export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
+export default function SignUp({
+  setUser,
+  setUserNameCookie,
+  setDisplaySearch,
+}) {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -67,7 +71,7 @@ export default function SignUp({ setUser, setDataUsername, setDisplaySearch }) {
           formData
         );
 
-        setDataUsername(response.data.resNewUser.account.username);
+        setUserNameCookie(response.data.resNewUser.account.username);
         // enregistrer le token dans un cookie :
         setUser(response.data.resNewUser.token);
 

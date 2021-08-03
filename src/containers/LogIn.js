@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
 
-export default function LogIn({ setUser, setDataUsername, setDisplaySearch }) {
+export default function LogIn({
+  setUser,
+  setUserNameCookie,
+  setDisplaySearch,
+}) {
   const [unauthorized, setUnauthorized] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,7 +38,7 @@ export default function LogIn({ setUser, setDataUsername, setDisplaySearch }) {
         "https://vinted-back-tommy.herokuapp.com/user/login",
         userData
       );
-      setDataUsername(response.data.resUser.account.username);
+      setUserNameCookie(response.data.resUser.account.username);
       //   enregistrer le token dans un cookie :
       setUser(response.data.resUser.token);
       // rediriger vers home page :

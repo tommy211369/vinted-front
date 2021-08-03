@@ -10,16 +10,20 @@ export default function Menu({
   setModalMenu,
   setUserToken,
   dataUsername,
+  setDataUsername,
   displayCart,
   setDisplayCart,
+  cart,
+  setCart,
 }) {
   return (
     <ul>
       {userToken ? (
         <LogOut
           setUserToken={setUserToken}
-          dataUsername={dataUsername}
+          setDataUsername={setDataUsername}
           setDisplayCart={setDisplayCart}
+          setCart={setCart}
         />
       ) : (
         <LogInSignOut setModalMenu={setModalMenu} />

@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
-const Payment = () => {
+const Payment = ({ dataUsername, cart, setCart }) => {
   const location = useLocation();
   const { amount, buyer } = location.state;
 
@@ -15,7 +15,12 @@ const Payment = () => {
 
   return (
     <Elements stripe={stripePromise}>
-      <CheckoutForm amount={amount} buyer={buyer} />
+      <CheckoutForm
+        amount={amount}
+        buyer={buyer}
+        cart={cart}
+        setCart={setCart}
+      />
     </Elements>
   );
 };

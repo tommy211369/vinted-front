@@ -1,14 +1,17 @@
 import React from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
-const CHeckoutForm = ({ amount, buyer }) => {
+const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
   const stripe = useStripe();
   const elements = useElements();
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
+      const newCart = [...cart];
       // récupérer les données du formulaire
       const cardElements = elements.getElement(CardElement);
 
@@ -31,8 +34,11 @@ const CHeckoutForm = ({ amount, buyer }) => {
 
       console.log("La réponse du serveur FRONT : ", response.data);
 
-      if (response.data.status === "succeeded") {
+      if (response.data === "succeeded") {
         alert("Paiement validé");
+        newCart.splice(0, newCart.length);
+        setCart(newCart);
+        history.push("/");
       } else {
         alert("Erreur de paiement");
       }
@@ -49,4 +55,4 @@ const CHeckoutForm = ({ amount, buyer }) => {
   );
 };
 
-export default CHeckoutForm;
+export default CheckoutForm;

@@ -15,6 +15,7 @@ export default function Header({
   userToken,
   setUserToken,
   dataUsername,
+  setDataUsername,
   title,
   setTitle,
   sort,
@@ -29,6 +30,7 @@ export default function Header({
   setActiveSwitch,
   displaySearch,
   cart,
+  setCart,
   totalCart,
   removeFromCart,
 }) {
@@ -74,8 +76,10 @@ export default function Header({
           userToken={userToken}
           setUserToken={setUserToken}
           dataUsername={dataUsername}
+          setDataUsername={setDataUsername}
           setModalMenu={setModalMenu}
           cart={cart}
+          setCart={setCart}
           displayCart={displayCart}
           setDisplayCart={setDisplayCart}
         />
@@ -83,6 +87,7 @@ export default function Header({
         {displayCart && (
           <Cart
             cart={cart}
+            setCart={setCart}
             totalCart={totalCart}
             setDisplayCart={setDisplayCart}
             removeFromCart={removeFromCart}
@@ -125,6 +130,7 @@ export default function Header({
             userToken={userToken}
             setUserToken={setUserToken}
             dataUsername={dataUsername}
+            setDataUsername={setDataUsername}
             displaySearch={displaySearch}
             cart={cart}
             displayCart={displayCart}

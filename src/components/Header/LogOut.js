@@ -2,7 +2,12 @@ import React from "react";
 import Cookies from "js-cookie";
 import { useHistory } from "react-router-dom";
 
-export default function LogOut({ setUserToken, dataUsername, setDisplayCart }) {
+export default function LogOut({
+  setUserToken,
+  setDataUsername,
+  setDisplayCart,
+  setCart,
+}) {
   const history = useHistory();
 
   return (
@@ -11,6 +16,7 @@ export default function LogOut({ setUserToken, dataUsername, setDisplayCart }) {
         setDisplayCart(false);
         Cookies.remove("userToken");
         setUserToken(null);
+        setDataUsername(null);
         history.push("/");
       }}
       className="logout"
