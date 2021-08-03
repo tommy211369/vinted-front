@@ -5,7 +5,7 @@ import OfferDetails from "../components/Offer/OfferDetails";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-export default function Offer({ setDisplaySearch, addToCart }) {
+export default function Offer({ setDisplaySearch, addToCart, dataUsername }) {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -34,7 +34,11 @@ export default function Offer({ setDisplaySearch, addToCart }) {
     <Spinner />
   ) : (
     <div>
-      <OfferDetails data={data} addToCart={addToCart} />
+      <OfferDetails
+        data={data}
+        addToCart={addToCart}
+        dataUsername={dataUsername}
+      />
     </div>
   );
 }

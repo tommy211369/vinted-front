@@ -109,7 +109,11 @@ function App() {
       />
       <Switch>
         <Route path="/offer/:id">
-          <Offer setDisplaySearch={setDisplaySearch} addToCart={addToCart} />
+          <Offer
+            setDisplaySearch={setDisplaySearch}
+            addToCart={addToCart}
+            dataUsername={dataUsername}
+          />
         </Route>
         <Route path="/signup">
           <SignUp
