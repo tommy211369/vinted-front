@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import Payment from "./containers/Payment";
 import Header from "./components/Header/Header";
 import Home from "./containers/Home";
 import Cookies from "js-cookie";
@@ -128,6 +129,13 @@ function App() {
         </Route>
         <Route path="/publish">
           <Publish
+            userToken={userToken}
+            setDisplaySearch={setDisplaySearch}
+            dataUsername={dataUsername}
+          />
+        </Route>
+        <Route path="/payment/">
+          <Payment
             userToken={userToken}
             setDisplaySearch={setDisplaySearch}
             dataUsername={dataUsername}

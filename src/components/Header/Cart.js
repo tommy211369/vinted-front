@@ -1,7 +1,9 @@
 import React, { Fragment } from "react";
+import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Cart = ({ cart, totalCart, setDisplayCart, removeFromCart }) => {
+  const history = useHistory();
   return (
     <Fragment>
       {cart.length > 0 ? (
@@ -36,7 +38,17 @@ const Cart = ({ cart, totalCart, setDisplayCart, removeFromCart }) => {
             <p>{totalCart.toFixed(2)} €</p>
           </div>
 
-          <p className="valid-cart">Valider votre panier</p>
+          <p
+            className="valid-cart"
+            onClick={() => {
+              setDisplayCart(false);
+              history.push("/payment", {
+                amount: totalCart.toFixed(2),
+              });
+            }}
+          >
+            Valider votre panier
+          </p>
         </div>
       ) : (
         <div className="empty-cart">
