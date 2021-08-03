@@ -46,13 +46,28 @@ body {
   box-shadow: 0 0 3px #3bc1c8;
 }
 
-.cart .times-circle {
+.empty-cart {
+  position: absolute;
+  z-index: 1000;
+  top: 140px;
+  text-align: center;
+  left: 50%;
+  width: 300px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 3px grey;
+}
+
+.cart .times-circle,
+.empty-cart .times-circle {
   position: absolute;
   top: 2px;
   right: 2px;
 }
 
-.cart .times-circle:hover {
+.cart .times-circle:hover,
+.empty-cart .times-circle:hover {
   cursor: pointer;
 }
 

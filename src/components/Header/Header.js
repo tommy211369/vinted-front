@@ -30,6 +30,7 @@ export default function Header({
   displaySearch,
   cart,
   totalCart,
+  removeFromCart,
 }) {
   // au click sur icon cart, afficher le panier
   const [displayCart, setDisplayCart] = useState(false);
@@ -84,6 +85,7 @@ export default function Header({
             cart={cart}
             totalCart={totalCart}
             setDisplayCart={setDisplayCart}
+            removeFromCart={removeFromCart}
           />
         )}
 

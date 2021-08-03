@@ -20,6 +20,7 @@ export default function Offer({ setDisplaySearch, addToCart }) {
           `https://vinted-back-tommy.herokuapp.com/offer/${id}`
         );
         setData(response.data);
+
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Cart = ({ cart, totalCart, setDisplayCart }) => {
+const Cart = ({ cart, totalCart, setDisplayCart, removeFromCart }) => {
   return (
     <Fragment>
       {cart.length > 0 ? (
@@ -20,7 +20,13 @@ const Cart = ({ cart, totalCart, setDisplayCart }) => {
                 <div key={item._id} className="cart-item">
                   <p>{item.product_name}</p>
                   <p>{item.product_price} €</p>
-                  <FontAwesomeIcon icon="trash-alt" className="trash" />
+                  <FontAwesomeIcon
+                    icon="trash-alt"
+                    className="trash"
+                    onClick={() => {
+                      removeFromCart(item);
+                    }}
+                  />
                 </div>
               );
             })}
@@ -33,7 +39,16 @@ const Cart = ({ cart, totalCart, setDisplayCart }) => {
           <p className="valid-cart">Valider votre panier</p>
         </div>
       ) : (
-        <p>Votre panier est vide</p>
+        <div className="empty-cart">
+          <p>Votre panier est vide</p>
+          <FontAwesomeIcon
+            icon="times-circle"
+            className="times-circle"
+            onClick={() => {
+              setDisplayCart(false);
+            }}
+          />
+        </div>
       )}
     </Fragment>
   );

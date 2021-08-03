@@ -71,6 +71,13 @@ function App() {
   };
 
   // REMOVE items from cart
+  const removeFromCart = (item) => {
+    const newCart = [...cart];
+    const exist = newCart.find((elem) => elem.id === item.id);
+    const index = newCart.indexOf(exist);
+    newCart.splice(index, 1);
+    setCart(newCart);
+  };
 
   return (
     <Router>
@@ -97,6 +104,7 @@ function App() {
         displaySearch={displaySearch}
         cart={cart}
         totalCart={totalCart}
+        removeFromCart={removeFromCart}
       />
       <Switch>
         <Route path="/offer/:id">
