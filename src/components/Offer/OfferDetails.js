@@ -1,8 +1,15 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import OfferInfos from "./OfferInfos";
 import UserInfos from "./UserInfos";
 
-export default function OfferDetails({ data, addToCart, setDisplayCart }) {
+export default function OfferDetails({
+  data,
+  addToCart,
+  setDisplayCart,
+  dataUsername,
+}) {
+  const history = useHistory();
   return (
     <div className="offerDetails">
       <div className="content">
@@ -13,15 +20,26 @@ export default function OfferDetails({ data, addToCart, setDisplayCart }) {
           <OfferInfos data={data} />
           <UserInfos data={data} />
 
-          <div
-            className="buy"
-            onClick={() => {
-              setDisplayCart(true);
-              addToCart(data);
-            }}
-          >
-            Ajouter au panier
-          </div>
+          {dataUsername ? (
+            <div
+              className="buy"
+              onClick={() => {
+                setDisplayCart(true);
+                addToCart(data);
+              }}
+            >
+              Ajouter au panier
+            </div>
+          ) : (
+            <div
+              className="buy"
+              onClick={() => {
+                history.push("/login");
+              }}
+            >
+              Ajouter au panier
+            </div>
+          )}
         </div>
       </div>
     </div>

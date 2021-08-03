@@ -18,10 +18,10 @@ export default function LogOut({
         newCart.splice(0, newCart.length);
         setCart(newCart);
         setDisplayCart(false);
-        Cookies.remove("userToken");
-        Cookies.remove("username");
         setUserToken(null);
         setDataUsername(null);
+        Cookies.remove("userToken");
+        Cookies.remove("username");
         history.push("/");
       }}
       className="logout"
