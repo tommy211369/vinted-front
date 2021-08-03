@@ -17,3 +17,13 @@ site : <a href="https://react-vinted-by-tommy.netlify.app/" target="blank">https
 <li>Log in to your account :</li>
 
 <img width="1352" alt="Capture d’écran 2021-07-31 à 18 29 00" src="https://user-images.githubusercontent.com/77752681/127746304-c9c56e25-0240-4c7f-ac47-73d984dae968.png">
+
+<li>Add items to your cart :</li>
+
+![Capture d’écran 2021-08-03 à 18 44 03](https://user-images.githubusercontent.com/77752681/128054150-4e86184e-5e87-42b2-b967-847626774e22.png)
+
+<li>Pay :</li>
+
+![Capture d’écran 2021-08-03 à 18 44 15](https://user-images.githubusercontent.com/77752681/128054204-b7862b50-18cf-4aae-9cc0-e4217d0dd8a7.png)
+
+
