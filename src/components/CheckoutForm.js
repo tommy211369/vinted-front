@@ -41,9 +41,10 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
 
       if (response.data === "succeeded") {
         console.log("Payment Success");
-        newCart.splice(0, newCart.length);
+
         setIsCompleted(true);
         await setTimeout(history.push("/"), 3000);
+        newCart.splice(0, newCart.length);
         setCart(newCart);
       } else {
         alert("Erreur de paiement");
@@ -57,7 +58,7 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
     <Fragment>
       {isCompleted ? (
         <p>Paiement effectué !</p>
-      ) : cart.length > 0 ? (
+      ) : (
         <form onSubmit={handleSubmit} className="checkout-form">
           <div>
             <h3>Vos articles : </h3>
@@ -95,8 +96,6 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
           <CardElement className="card-element" />
           <input type="submit" value="Payer" className="buy" />
         </form>
-      ) : (
-        <Redirect to="/" />
       )}
     </Fragment>
   );
