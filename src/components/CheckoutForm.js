@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
-import Spinner from "./Spinner";
 import { useHistory, Redirect } from "react-router-dom";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
 const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
-  const [isLoading, setIsLoading] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
   const history = useHistory();
@@ -30,8 +28,6 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
       console.log("Token front : ", stripeResponse.token.id);
       const stripeToken = stripeResponse.token.id; // token
 
-      await setIsLoading(true);
-
       // envoyer le stripeToken au serveur
       const response = await axios.post(
         "https://vinted-back-tommy.herokuapp.com/payment",
@@ -54,7 +50,7 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
     }
   };
 
-  return cart.length > 0 && !isLoading ? (
+  return cart.length > 0 ? (
     <form onSubmit={handleSubmit} className="checkout-form">
       <div>
         <h3>Vos articles : </h3>
