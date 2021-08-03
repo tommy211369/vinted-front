@@ -1,25 +1,32 @@
-import React from "react";
+import React, { Fragment } from "react";
 
-const Cart = () => {
+const Cart = ({ cart, totalCart }) => {
   return (
-    <div className="cart">
-      <div className="cart-items">
-        <div className="cart-item">
-          <p>Basket Nike</p>
-          <p>75 €</p>
-        </div>
-        <div className="cart-item">
-          <p>T-shirt Babou</p>
-          <p>3 €</p>
-        </div>
-      </div>
-      <div className="total-cart">
-        <p>Total</p>
-        <p>78€</p>
-      </div>
+    <Fragment>
+      {cart.length > 0 ? (
+        <div className="cart">
+          <div className="cart-items">
+            {cart.map((item) => {
+              totalCart += item.product_price;
+              return (
+                <div key={item._id} className="cart-item">
+                  <p>{item.product_name}</p>
+                  <p>{item.product_price} €</p>
+                </div>
+              );
+            })}
+          </div>
+          <div className="total-cart">
+            <p>Total</p>
+            <p>{totalCart.toFixed(2)} €</p>
+          </div>
 
-      <p className="valid-cart">Valider votre panier</p>
-    </div>
+          <p className="valid-cart">Valider votre panier</p>
+        </div>
+      ) : (
+        <p>Votre panier est vide</p>
+      )}
+    </Fragment>
   );
 };
 

@@ -10,8 +10,6 @@ export default function Menu({
   setModalMenu,
   setUserToken,
   dataUsername,
-  cart,
-  setCart,
   displayCart,
   setDisplayCart,
 }) {

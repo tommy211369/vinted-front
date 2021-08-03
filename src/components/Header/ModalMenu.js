@@ -11,8 +11,6 @@ export default function ModalMenu({
   setUserToken,
   dataUsername,
   displaySearch,
-  cart,
-  setCart,
   displayCart,
   setDisplayCart,
 }) {

@@ -29,7 +29,7 @@ export default function Header({
   setActiveSwitch,
   displaySearch,
   cart,
-  setCart,
+  totalCart,
 }) {
   // au click sur icon cart, afficher le panier
   const [displayCart, setDisplayCart] = useState(false);
@@ -75,12 +75,11 @@ export default function Header({
           dataUsername={dataUsername}
           setModalMenu={setModalMenu}
           cart={cart}
-          setCart={setCart}
           displayCart={displayCart}
           setDisplayCart={setDisplayCart}
         />
 
-        {displayCart && <Cart />}
+        {displayCart && <Cart cart={cart} totalCart={totalCart} />}
 
         <FontAwesomeIcon
           icon="bars"
@@ -119,7 +118,6 @@ export default function Header({
             dataUsername={dataUsername}
             displaySearch={displaySearch}
             cart={cart}
-            setCart={setCart}
             displayCart={displayCart}
             setDisplayCart={setDisplayCart}
           />

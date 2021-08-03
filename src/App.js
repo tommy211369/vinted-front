@@ -54,6 +54,22 @@ function App() {
     Cookies.set("userToken", token);
   };
 
+  let totalCart = 0;
+
+  // ADD items to cart
+  const addToCart = (item) => {
+    // vérifie si la fonction répond
+    console.log(item);
+    // créer une copie de cart
+    const newCart = [...cart];
+    // ajouter dans cart
+    newCart.push({ ...item, ...newCart });
+    // mettre à jour le state
+    setCart(newCart);
+  };
+
+  // REMOVE items from cart
+
   return (
     <Router>
       <Header
@@ -78,15 +94,11 @@ function App() {
         setActiveSwitch={setActiveSwitch}
         displaySearch={displaySearch}
         cart={cart}
-        setCart={setCart}
+        totalCart={totalCart}
       />
       <Switch>
         <Route path="/offer/:id">
-          <Offer
-            setDisplaySearch={setDisplaySearch}
-            cart={cart}
-            setCart={setCart}
-          />
+          <Offer setDisplaySearch={setDisplaySearch} addToCart={addToCart} />
         </Route>
         <Route path="/signup">
           <SignUp

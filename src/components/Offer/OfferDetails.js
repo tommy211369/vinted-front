@@ -2,8 +2,11 @@ import React from "react";
 import OfferInfos from "./OfferInfos";
 import UserInfos from "./UserInfos";
 
-export default function OfferDetails({ data, cart, setCart }) {
-  // fonction qui ajoute l'article au panier
+export default function OfferDetails({ data, addToCart }) {
+  // fonction vérifie si l'item est déjà dans le panier
+
+  // Existe déjà dans cart ?
+  // const exist = newCart.find((elem) => elem._id === item._id)
   return (
     <div className="offerDetails">
       <div className="content">
@@ -14,7 +17,14 @@ export default function OfferDetails({ data, cart, setCart }) {
           <OfferInfos data={data} />
           <UserInfos data={data} />
 
-          <div className="buy">Ajouter au panier</div>
+          <div
+            className="buy"
+            onClick={() => {
+              addToCart(data);
+            }}
+          >
+            Ajouter au panier
+          </div>
         </div>
       </div>
     </div>
