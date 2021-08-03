@@ -11,6 +11,10 @@ export default function ModalMenu({
   setUserToken,
   dataUsername,
   displaySearch,
+  cart,
+  setCart,
+  displayCart,
+  setDisplayCart,
 }) {
   return (
     <ul className={displaySearch ? "modal-menu" : "modal-menu-nosearch"}>
@@ -35,11 +39,23 @@ export default function ModalMenu({
           to="/publish"
           className="sell-now"
           onClick={() => {
+            setDisplayCart(false);
             setModalMenu(false);
           }}
         >
           Vends maintenant
         </Link>
+      )}
+
+      {userToken && (
+        <FontAwesomeIcon
+          icon="shopping-cart"
+          className="cart-icon"
+          onClick={() => {
+            setDisplayCart(!displayCart);
+            setModalMenu(false);
+          }}
+        />
       )}
 
       <li className="languages">

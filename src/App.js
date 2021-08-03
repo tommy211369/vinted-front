@@ -18,6 +18,7 @@ import {
   faBars,
   faTimesCircle,
   faLanguage,
+  faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 library.add(
@@ -29,7 +30,8 @@ library.add(
   faTimesCircle,
   faAngleUp,
   faAngleDown,
-  faLanguage
+  faLanguage,
+  faShoppingCart
 );
 
 function App() {
@@ -44,6 +46,7 @@ function App() {
   const [sortSwitch, setSortSwitch] = useState(""); // sort by asc price or desc price
   const [activeSwitch, setActiveSwitch] = useState(false); // sort activation button
   const [displaySearch, setDisplaySearch] = useState(true); // display the search bar or not
+  const [cart, setCart] = useState([]); // cart
 
   // store token as cookie
   const setUser = (token) => {
@@ -74,10 +77,16 @@ function App() {
         activeSwitch={activeSwitch}
         setActiveSwitch={setActiveSwitch}
         displaySearch={displaySearch}
+        cart={cart}
+        setCart={setCart}
       />
       <Switch>
         <Route path="/offer/:id">
-          <Offer setDisplaySearch={setDisplaySearch} />
+          <Offer
+            setDisplaySearch={setDisplaySearch}
+            cart={cart}
+            setCart={setCart}
+          />
         </Route>
         <Route path="/signup">
           <SignUp

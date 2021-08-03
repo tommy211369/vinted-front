@@ -34,8 +34,6 @@ export default function LogIn({ setUser, setDataUsername, setDisplaySearch }) {
         "https://vinted-back-tommy.herokuapp.com/user/login",
         userData
       );
-
-      console.log(response.data);
       setDataUsername(response.data.resUser.account.username);
       //   enregistrer le token dans un cookie :
       setUser(response.data.resUser.token);

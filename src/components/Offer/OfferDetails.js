@@ -2,7 +2,8 @@ import React from "react";
 import OfferInfos from "./OfferInfos";
 import UserInfos from "./UserInfos";
 
-export default function OfferDetails({ data }) {
+export default function OfferDetails({ data, cart, setCart }) {
+  // fonction qui ajoute l'article au panier
   return (
     <div className="offerDetails">
       <div className="content">
@@ -13,7 +14,7 @@ export default function OfferDetails({ data }) {
           <OfferInfos data={data} />
           <UserInfos data={data} />
 
-          <div className="buy">Acheter</div>
+          <div className="buy">Ajouter au panier</div>
         </div>
       </div>
     </div>

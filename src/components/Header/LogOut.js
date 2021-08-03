@@ -2,17 +2,19 @@ import React from "react";
 import Cookies from "js-cookie";
 import { useHistory } from "react-router-dom";
 
-export default function LogOut({ setUserToken, dataUsername }) {
+export default function LogOut({ setUserToken, dataUsername, setDisplayCart }) {
   const history = useHistory();
 
-  // log out
-  const handleDeleteToken = () => {
-    Cookies.remove("userToken");
-    setUserToken(null);
-    history.push("/");
-  };
   return (
-    <li onClick={handleDeleteToken} className="logout">
+    <li
+      onClick={() => {
+        setDisplayCart(false);
+        Cookies.remove("userToken");
+        setUserToken(null);
+        history.push("/");
+      }}
+      className="logout"
+    >
       Se déconnecter
     </li>
   );

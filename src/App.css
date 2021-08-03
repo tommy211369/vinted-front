@@ -34,6 +34,47 @@ body {
   position: relative;
 }
 
+.header .cart {
+  position: absolute;
+  z-index: 1000;
+  top: 140px;
+  right: 50px;
+  width: 250px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #3bc1c8;
+}
+
+.cart-items {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid grey;
+}
+
+.cart-item {
+  font-size: 14px;
+  display: flex;
+  margin-bottom: 7px;
+  justify-content: space-between;
+}
+
+.total-cart {
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  margin-bottom: 7px;
+  justify-content: space-between;
+}
+
+.valid-cart {
+  text-align: center;
+  padding: 10px;
+  color: white;
+  margin-top: 20px;
+  background-color: #3bc1c8;
+}
+
 .header .wrapper-no-search img {
   width: 200px;
   height: 48px;
@@ -51,7 +92,7 @@ body {
 }
 
 .search {
-  width: 590px;
+  width: 500px;
   padding: 10px;
   justify-content: space-between;
   display: flex;
@@ -60,7 +101,7 @@ body {
 }
 
 .search-bar {
-  width: 590px;
+  width: 100%;
   color: #757575;
   display: flex;
   align-items: center;
@@ -185,6 +226,20 @@ body {
 .sell-now:hover {
   color: #3bc1c8;
   background-color: white;
+}
+
+.cart-icon {
+  color: #3bc1c8;
+  font-size: 25px;
+  padding: 10px;
+  transition: background-color 0.2s ease;
+  border-radius: 50px;
+}
+
+.cart-icon:hover {
+  background-color: rgba(59, 193, 200, 0.2);
+
+  cursor: pointer;
 }
 
 .languages {
@@ -855,7 +910,7 @@ body {
   }
 
   .header .modal-menu-nosearch {
-    left: 37%;
+    left: 50%;
   }
 
   .offerDetails img {
@@ -899,6 +954,20 @@ body {
   .header .modal-menu {
     top: 60px;
   }
+
+  .placards {
+    display: none;
+  }
+
+  .hero-placards-2 {
+    display: block;
+  }
+
+  .header .cart {
+    top: 60px;
+    left: 50%;
+    margin-left: -145px;
+  }
 }
 
 @media (max-width: 945px) {
@@ -940,16 +1009,6 @@ body {
 @media (max-width: 733px) {
   .offers {
     justify-content: space-around;
-  }
-}
-
-@media (max-width: 660px) {
-  .placards {
-    display: none;
-  }
-
-  .hero-placards-2 {
-    display: block;
   }
 }
 
