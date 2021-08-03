@@ -79,7 +79,13 @@ export default function Header({
           setDisplayCart={setDisplayCart}
         />
 
-        {displayCart && <Cart cart={cart} totalCart={totalCart} />}
+        {displayCart && (
+          <Cart
+            cart={cart}
+            totalCart={totalCart}
+            setDisplayCart={setDisplayCart}
+          />
+        )}
 
         <FontAwesomeIcon
           icon="bars"

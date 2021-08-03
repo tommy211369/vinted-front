@@ -19,6 +19,7 @@ import {
   faTimesCircle,
   faLanguage,
   faShoppingCart,
+  faTrashAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 library.add(
@@ -31,7 +32,8 @@ library.add(
   faAngleUp,
   faAngleDown,
   faLanguage,
-  faShoppingCart
+  faShoppingCart,
+  faTrashAlt
 );
 
 function App() {
