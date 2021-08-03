@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import Logo from "./Logo";
 import Search from "./Search";
 import Menu from "./Menu";
@@ -36,7 +36,6 @@ export default function Header({
   displayCart,
   setDisplayCart,
   displayLogo,
-  setDisplayLogo,
 }) {
   return (
     <div className="header">

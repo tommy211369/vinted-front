@@ -1,9 +1,11 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
 import axios from "axios";
 import { useHistory, Redirect } from "react-router-dom";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
 const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
+  const [isCompleted, setIsCompleted] = useState(false);
+
   const stripe = useStripe();
   const elements = useElements();
   const history = useHistory();
@@ -38,10 +40,10 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
       );
 
       if (response.data === "succeeded") {
-        await alert("Paiement validé");
         newCart.splice(0, newCart.length);
         setCart(newCart);
-        history.push("/");
+        setIsCompleted(true);
+        setTimeout(history.push("/"), 3000);
       } else {
         alert("Erreur de paiement");
       }
@@ -50,46 +52,52 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
     }
   };
 
-  return cart.length > 0 ? (
-    <form onSubmit={handleSubmit} className="checkout-form">
-      <div>
-        <h3>Vos articles : </h3>
-        {cart.map((item) => {
-          return (
-            <div className="checkout-form-items">
-              <p>{item.product_name}</p>
-              <p>{item.product_price.toFixed(2)} €</p>
+  return (
+    <Fragment>
+      {isCompleted ? (
+        <p>Paiement effectué !</p>
+      ) : cart.length > 0 ? (
+        <form onSubmit={handleSubmit} className="checkout-form">
+          <div>
+            <h3>Vos articles : </h3>
+            {cart.map((item) => {
+              return (
+                <div className="checkout-form-items">
+                  <p>{item.product_name}</p>
+                  <p>{item.product_price.toFixed(2)} €</p>
+                </div>
+              );
+            })}
+          </div>
+          <div className="checkout-form-fees">
+            <div>
+              <p>Frais de protection acheteurs</p>
+              <p>{protectCost.toFixed(2)} €</p>
             </div>
-          );
-        })}
-      </div>
-      <div className="checkout-form-fees">
-        <div>
-          <p>Frais de protection acheteurs</p>
-          <p>{protectCost.toFixed(2)} €</p>
-        </div>
-        <div>
-          <p>Frais de port</p>
-          <p>{shippingCost.toFixed(2)} €</p>
-        </div>
-      </div>
+            <div>
+              <p>Frais de port</p>
+              <p>{shippingCost.toFixed(2)} €</p>
+            </div>
+          </div>
 
-      <div className="checkout-form-total">
-        <p>Total à payer :</p>
-        <p>{total.toFixed(2)} €</p>
-      </div>
+          <div className="checkout-form-total">
+            <p>Total à payer :</p>
+            <p>{total.toFixed(2)} €</p>
+          </div>
 
-      <p>
-        Il ne vous reste plus qu'une étape pour vous offrir vos articles. Vous
-        allez payer <span>{total.toFixed(2)} €</span> (frais de protection et
-        frais de port inclus).
-      </p>
+          <p>
+            Il ne vous reste plus qu'une étape pour vous offrir vos articles.
+            Vous allez payer <span>{total.toFixed(2)} €</span> (frais de
+            protection et frais de port inclus).
+          </p>
 
-      <CardElement className="card-element" />
-      <input type="submit" value="Payer" className="buy" />
-    </form>
-  ) : (
-    <Redirect to="/" />
+          <CardElement className="card-element" />
+          <input type="submit" value="Payer" className="buy" />
+        </form>
+      ) : (
+        <Redirect to="/" />
+      )}
+    </Fragment>
   );
 };
 
