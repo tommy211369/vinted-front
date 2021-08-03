@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CheckoutForm from "../components/CheckoutForm";
 import { useLocation } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
-const Payment = ({ dataUsername, cart, setCart }) => {
+const Payment = ({ cart, setCart, setDisplaySearch, setDisplayLogo }) => {
   const location = useLocation();
   const { amount, buyer } = location.state;
+
+  useEffect(() => {
+    setDisplayLogo(true);
+    setDisplaySearch(false);
+  }, []);
 
   // stripe
   const stripePromise = loadStripe(

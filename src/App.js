@@ -51,7 +51,9 @@ function App() {
   const [sortSwitch, setSortSwitch] = useState(""); // sort by asc price or desc price
   const [activeSwitch, setActiveSwitch] = useState(false); // sort activation button
   const [displaySearch, setDisplaySearch] = useState(true); // display the search bar or not
+  const [displayLogo, setDisplayLogo] = useState(false); // display only the logo in the header
   const [cart, setCart] = useState([]); // cart
+  const [displayCart, setDisplayCart] = useState(false); // display cart on click
 
   // store token as cookie
   const setUser = (token) => {
@@ -114,8 +116,12 @@ function App() {
         displaySearch={displaySearch}
         cart={cart}
         setCart={setCart}
+        displayCart={displayCart}
+        setDisplayCart={setDisplayCart}
         totalCart={totalCart}
         removeFromCart={removeFromCart}
+        displayLogo={displayLogo}
+        setDisplayLogo={setDisplayLogo}
       />
       <Switch>
         <Route path="/offer/:id">
@@ -123,6 +129,9 @@ function App() {
             setDisplaySearch={setDisplaySearch}
             addToCart={addToCart}
             dataUsername={dataUsername}
+            displayCart={displayCart}
+            setDisplayCart={setDisplayCart}
+            setDisplayLogo={setDisplayLogo}
           />
         </Route>
         <Route path="/signup">
@@ -150,9 +159,9 @@ function App() {
           <Payment
             userToken={userToken}
             setDisplaySearch={setDisplaySearch}
-            dataUsername={dataUsername}
             cart={cart}
             setCart={setCart}
+            setDisplayLogo={setDisplayLogo}
           />
         </Route>
 
@@ -163,6 +172,7 @@ function App() {
             priceMin={priceMin}
             priceMax={priceMax}
             setDisplaySearch={setDisplaySearch}
+            setDisplayLogo={setDisplayLogo}
           />
         </Route>
       </Switch>

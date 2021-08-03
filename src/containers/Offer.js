@@ -5,14 +5,22 @@ import OfferDetails from "../components/Offer/OfferDetails";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-export default function Offer({ setDisplaySearch, addToCart, dataUsername }) {
+export default function Offer({
+  setDisplaySearch,
+  addToCart,
+  dataUsername,
+  setDisplayCart,
+  setDisplayLogo,
+}) {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   const { id } = useParams();
 
   useEffect(() => {
+    setDisplayCart(false);
     setDisplaySearch(false);
+    setDisplayLogo(false);
 
     const fetchData = async () => {
       try {
@@ -38,6 +46,7 @@ export default function Offer({ setDisplaySearch, addToCart, dataUsername }) {
         data={data}
         addToCart={addToCart}
         dataUsername={dataUsername}
+        setDisplayCart={setDisplayCart}
       />
     </div>
   );

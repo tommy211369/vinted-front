@@ -2,7 +2,7 @@ import React from "react";
 import OfferInfos from "./OfferInfos";
 import UserInfos from "./UserInfos";
 
-export default function OfferDetails({ data, addToCart }) {
+export default function OfferDetails({ data, addToCart, setDisplayCart }) {
   return (
     <div className="offerDetails">
       <div className="content">
@@ -16,6 +16,7 @@ export default function OfferDetails({ data, addToCart }) {
           <div
             className="buy"
             onClick={() => {
+              setDisplayCart(true);
               addToCart(data);
             }}
           >

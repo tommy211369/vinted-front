@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import Spinner from "./Spinner";
+import { useHistory, Redirect } from "react-router-dom";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
 const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
   const history = useHistory();
+
+  const protectCost = 0.4;
+  const shippingCost = 0.8;
+
+  const total = amount + shippingCost + protectCost;
 
   const handleSubmit = async (e) => {
     try {
@@ -23,19 +30,19 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
       console.log("Token front : ", stripeResponse.token.id);
       const stripeToken = stripeResponse.token.id; // token
 
+      await setIsLoading(true);
+
       // envoyer le stripeToken au serveur
       const response = await axios.post(
         "https://vinted-back-tommy.herokuapp.com/payment",
         {
           stripeToken: stripeToken,
-          price: amount,
+          price: total,
         }
       );
 
-      console.log("La réponse du serveur FRONT : ", response.data);
-
       if (response.data === "succeeded") {
-        alert("Paiement validé");
+        await alert("Paiement validé");
         newCart.splice(0, newCart.length);
         setCart(newCart);
         history.push("/");
@@ -47,11 +54,46 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
     }
   };
 
-  return (
+  return cart.length > 0 && !isLoading ? (
     <form onSubmit={handleSubmit} className="checkout-form">
+      <div>
+        <h3>Vos articles : </h3>
+        {cart.map((item) => {
+          return (
+            <div className="checkout-form-items">
+              <p>{item.product_name}</p>
+              <p>{item.product_price.toFixed(2)} €</p>
+            </div>
+          );
+        })}
+      </div>
+      <div className="checkout-form-fees">
+        <div>
+          <p>Frais de protection acheteurs</p>
+          <p>{protectCost.toFixed(2)} €</p>
+        </div>
+        <div>
+          <p>Frais de port</p>
+          <p>{shippingCost.toFixed(2)} €</p>
+        </div>
+      </div>
+
+      <div className="checkout-form-total">
+        <p>Total à payer :</p>
+        <p>{total.toFixed(2)} €</p>
+      </div>
+
+      <p>
+        Il ne vous reste plus qu'une étape pour vous offrir vos articles. Vous
+        allez payer <span>{total.toFixed(2)} €</span> (frais de protection et
+        frais de port inclus).
+      </p>
+
       <CardElement className="card-element" />
-      <input type="submit" />
+      <input type="submit" value="Payer" className="buy" />
     </form>
+  ) : (
+    <Redirect to="/" />
   );
 };
 

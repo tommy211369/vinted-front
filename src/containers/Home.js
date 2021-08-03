@@ -11,6 +11,7 @@ export default function Home({
   priceMax,
   setDisplaySearch,
   userToken,
+  setDisplayLogo,
 }) {
   const [data, setData] = useState({}); // number of offers
   const [isLoading, setIsLoading] = useState(true);
@@ -21,6 +22,7 @@ export default function Home({
   // at component loading
   useEffect(() => {
     setDisplaySearch(true);
+    setDisplayLogo(false);
 
     if (nbrItems === count) {
       setPage(1);

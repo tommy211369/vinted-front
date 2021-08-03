@@ -33,10 +33,11 @@ export default function Header({
   setCart,
   totalCart,
   removeFromCart,
+  displayCart,
+  setDisplayCart,
+  displayLogo,
+  setDisplayLogo,
 }) {
-  // au click sur icon cart, afficher le panier
-  const [displayCart, setDisplayCart] = useState(false);
-
   return (
     <div className="header">
       <div className={displaySearch ? "wrapper" : "wrapper-no-search"}>
@@ -72,38 +73,56 @@ export default function Header({
         ) : (
           <Fragment></Fragment>
         )}
-        <Menu
-          userToken={userToken}
-          setUserToken={setUserToken}
-          dataUsername={dataUsername}
-          setDataUsername={setDataUsername}
-          setModalMenu={setModalMenu}
-          cart={cart}
-          setCart={setCart}
-          displayCart={displayCart}
-          setDisplayCart={setDisplayCart}
-        />
 
-        {displayCart && (
-          <Cart
+        {displayLogo === false && (
+          <Menu
+            userToken={userToken}
+            setUserToken={setUserToken}
+            dataUsername={dataUsername}
+            setDataUsername={setDataUsername}
+            setModalMenu={setModalMenu}
             cart={cart}
             setCart={setCart}
-            totalCart={totalCart}
+            displayCart={displayCart}
             setDisplayCart={setDisplayCart}
-            removeFromCart={removeFromCart}
-            dataUsername={dataUsername}
           />
         )}
 
-        <FontAwesomeIcon
-          icon="bars"
-          className="menu-bars"
-          onClick={() => {
-            setModalMenu(!modalMenu);
-            setDisplayCart(false);
-            setModalSearchBar(false);
-          }}
-        />
+        {displayCart && (
+            <Menu
+              userToken={userToken}
+              setUserToken={setUserToken}
+              dataUsername={dataUsername}
+              setDataUsername={setDataUsername}
+              setModalMenu={setModalMenu}
+              cart={cart}
+              setCart={setCart}
+              displayCart={displayCart}
+              setDisplayCart={setDisplayCart}
+            />
+          ) && (
+            <Cart
+              cart={cart}
+              setCart={setCart}
+              totalCart={totalCart}
+              setDisplayCart={setDisplayCart}
+              removeFromCart={removeFromCart}
+              dataUsername={dataUsername}
+            />
+          )}
+
+        {displayLogo === false && (
+          <FontAwesomeIcon
+            icon="bars"
+            className="menu-bars"
+            onClick={() => {
+              setModalMenu(!modalMenu);
+              setDisplayCart(false);
+              setModalSearchBar(false);
+            }}
+          />
+        )}
+
         {/* Modals */}
         {modalSearchBar && displaySearch ? (
           <ModalSearch
