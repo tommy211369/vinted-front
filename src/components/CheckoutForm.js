@@ -35,6 +35,7 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
         {
           stripeToken: stripeToken,
           price: total,
+          buyer: buyer,
         }
       );
 
