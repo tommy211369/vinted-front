@@ -10,6 +10,7 @@ export default function ModalMenu({
   userToken,
   setUserToken,
   dataUsername,
+  setDataUsername,
   displaySearch,
   displayCart,
   setDisplayCart,
@@ -22,6 +23,8 @@ export default function ModalMenu({
         <LogOut
           setUserToken={setUserToken}
           dataUsername={dataUsername}
+          setDataUsername={setDataUsername}
+          setDisplayCart={setDisplayCart}
           setCart={setCart}
           cart={cart}
         />
