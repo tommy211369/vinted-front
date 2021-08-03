@@ -7,7 +7,7 @@ const CHeckoutForm = () => {
   const elements = useElements();
 
   const userId = "3433546573648573648";
-  const product_price = 25;
+  const productPrice = 25;
 
   const handleSubmit = async (e) => {
     try {
@@ -19,13 +19,17 @@ const CHeckoutForm = () => {
       const stripeResponse = await stripe.createToken(cardElements, {
         name: userId,
       });
-      console.log(stripeResponse.token.id); // token
+
+      const stripeToken = stripeResponse.token.id; // token
 
       // envoyer le stripeToken au serveur
-      const response = await axios.post("http://localhost:4000/payment", {
-        stripeToken: stripeResponse.token.id,
-        price: product_price,
-      });
+      const response = await axios.post(
+        "https://vinted-back-tommy.herokuapp.com/payment",
+        {
+          stripeToken: stripeToken,
+          price: productPrice,
+        }
+      );
 
       console.log("La réponse du serveur : ", response.data);
     } catch (error) {

@@ -923,13 +923,11 @@ body {
   margin: 40px auto;
   box-sizing: border-box;
   padding: 20px;
-  background-color: blue;
 }
 
 .card-element {
   width: 80%;
   margin: 0 auto;
-  background-color: red;
 }
 
 /* _______________________________________ */

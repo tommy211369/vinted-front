@@ -134,7 +134,7 @@ function App() {
             dataUsername={dataUsername}
           />
         </Route>
-        <Route path="/payment/">
+        <Route path="/payment">
           <Payment
             userToken={userToken}
             setDisplaySearch={setDisplaySearch}
