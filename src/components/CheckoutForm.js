@@ -41,9 +41,9 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
 
       if (response.data === "succeeded") {
         newCart.splice(0, newCart.length);
-        setCart(newCart);
         setIsCompleted(true);
         setTimeout(history.push("/"), 3000);
+        setCart(newCart);
       } else {
         alert("Erreur de paiement");
       }
