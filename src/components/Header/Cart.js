@@ -2,7 +2,13 @@ import React, { Fragment } from "react";
 import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Cart = ({ cart, totalCart, setDisplayCart, removeFromCart }) => {
+const Cart = ({
+  cart,
+  totalCart,
+  setDisplayCart,
+  removeFromCart,
+  dataUsername,
+}) => {
   const history = useHistory();
   return (
     <Fragment>
@@ -35,7 +41,7 @@ const Cart = ({ cart, totalCart, setDisplayCart, removeFromCart }) => {
           </div>
           <div className="total-cart">
             <p>Total</p>
-            <p>{totalCart.toFixed(2)} €</p>
+            <p>{totalCart} €</p>
           </div>
 
           <p
@@ -43,7 +49,8 @@ const Cart = ({ cart, totalCart, setDisplayCart, removeFromCart }) => {
             onClick={() => {
               setDisplayCart(false);
               history.push("/payment", {
-                amount: totalCart.toFixed(2),
+                amount: totalCart,
+                buyer: dataUsername,
               });
             }}
           >

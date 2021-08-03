@@ -86,6 +86,7 @@ export default function Header({
             totalCart={totalCart}
             setDisplayCart={setDisplayCart}
             removeFromCart={removeFromCart}
+            dataUsername={dataUsername}
           />
         )}
 

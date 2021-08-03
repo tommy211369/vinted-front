@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
-const CHeckoutForm = () => {
+const CHeckoutForm = ({ amount, buyer }) => {
   const stripe = useStripe();
   const elements = useElements();
-
-  const userId = "3433546573648573648";
-  const productPrice = 25;
 
   const handleSubmit = async (e) => {
     try {
@@ -17,9 +14,10 @@ const CHeckoutForm = () => {
 
       // envoyer à l'api stripe
       const stripeResponse = await stripe.createToken(cardElements, {
-        name: userId,
+        name: buyer,
       });
 
+      console.log("Token front : ", stripeResponse.token.id);
       const stripeToken = stripeResponse.token.id; // token
 
       // envoyer le stripeToken au serveur
@@ -27,11 +25,17 @@ const CHeckoutForm = () => {
         "https://vinted-back-tommy.herokuapp.com/payment",
         {
           stripeToken: stripeToken,
-          price: productPrice,
+          price: amount,
         }
       );
 
-      console.log("La réponse du serveur : ", response.data);
+      console.log("La réponse du serveur FRONT : ", response.data);
+
+      if (response.data.status === "succeeded") {
+        alert("Paiement validé");
+      } else {
+        alert("Erreur de paiement");
+      }
     } catch (error) {
       console.log(error.message);
     }

@@ -6,7 +6,7 @@ import { Elements } from "@stripe/react-stripe-js";
 
 const Payment = () => {
   const location = useLocation();
-  const { amount } = location.state;
+  const { amount, buyer } = location.state;
 
   // stripe
   const stripePromise = loadStripe(
@@ -15,7 +15,7 @@ const Payment = () => {
 
   return (
     <Elements stripe={stripePromise}>
-      <CheckoutForm amount={amount} />
+      <CheckoutForm amount={amount} buyer={buyer} />
     </Elements>
   );
 };
