@@ -1,14 +1,13 @@
 import React, { Fragment, useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
 const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
-  const [isCompleted, setIsCompleted] = useState(false);
+  const [completed, setCompleted] = useState(false);
 
   const stripe = useStripe();
   const elements = useElements();
-  const history = useHistory();
 
   const protectCost = 0.4;
   const shippingCost = 0.8;
@@ -40,10 +39,7 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
       );
 
       if (response.data === "succeeded") {
-        console.log("Payment Success");
-
-        await setIsCompleted(true);
-        await setTimeout(history.push("/"), 3000);
+        await setCompleted(true);
         newCart.splice(0, newCart.length);
         setCart(newCart);
       } else {
@@ -56,15 +52,18 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
 
   return (
     <Fragment>
-      {isCompleted ? (
-        <p>Paiement effectué !</p>
+      {completed ? (
+        <div className="payment-done">
+          <p>Paiement effectué !</p>
+          <Link to="/">Retourner à la page d'accueil</Link>
+        </div>
       ) : (
         <form onSubmit={handleSubmit} className="checkout-form">
           <div>
             <h3>Vos articles : </h3>
             {cart.map((item) => {
               return (
-                <div className="checkout-form-items">
+                <div key={item._id} className="checkout-form-items">
                   <p>{item.product_name}</p>
                   <p>{item.product_price.toFixed(2)} €</p>
                 </div>

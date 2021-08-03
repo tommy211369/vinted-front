@@ -50,6 +50,7 @@ export default function Home({
     priceMax,
     setDisplaySearch,
     count,
+    setDisplayLogo,
   ]);
 
   return isLoading ? (

@@ -36,7 +36,7 @@ export default function Offer({
     };
 
     fetchData();
-  }, [id, setDisplaySearch]);
+  }, [id, setDisplaySearch, setDisplayLogo, setDisplayCart]);
 
   return isLoading ? (
     <Spinner />

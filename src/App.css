@@ -996,6 +996,25 @@ body {
   color: #3bc1c8;
 }
 
+.payment-done {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-done p {
+  width: max-content;
+  margin: 30px auto;
+  padding: 20px;
+  color: white;
+  background-color: #3bc1c8;
+}
+
+.payment-done a {
+  margin: 0 auto;
+  text-decoration: none;
+  color: #3bc1c8;
+}
+
 /* _______________________________________ */
 /* MEDIA QUERIES */
 /* _______________________________________ */

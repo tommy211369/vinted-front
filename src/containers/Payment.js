@@ -11,7 +11,7 @@ const Payment = ({ cart, setCart, setDisplaySearch, setDisplayLogo }) => {
   useEffect(() => {
     setDisplayLogo(true);
     setDisplaySearch(false);
-  }, []);
+  }, [setDisplayLogo, setDisplaySearch]);
 
   // stripe
   const stripePromise = loadStripe(
