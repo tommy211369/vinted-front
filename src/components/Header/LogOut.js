@@ -19,6 +19,7 @@ export default function LogOut({
         setCart(newCart);
         setDisplayCart(false);
         Cookies.remove("userToken");
+        Cookies.remove("username");
         setUserToken(null);
         setDataUsername(null);
         history.push("/");

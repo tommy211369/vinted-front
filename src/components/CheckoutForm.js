@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import axios from "axios";
-import { useHistory, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
 const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
@@ -42,7 +42,7 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
       if (response.data === "succeeded") {
         console.log("Payment Success");
 
-        setIsCompleted(true);
+        await setIsCompleted(true);
         await setTimeout(history.push("/"), 3000);
         newCart.splice(0, newCart.length);
         setCart(newCart);
