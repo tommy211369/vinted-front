@@ -38,7 +38,7 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
         }
       );
 
-      if (response.data === "succeeded") {
+      if (response.status === "succeeded") {
         await setCompleted(true);
         newCart.splice(0, newCart.length);
         setCart(newCart);
