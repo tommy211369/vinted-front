@@ -38,12 +38,13 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
         }
       );
 
-      if (response.data.status === "succeeded") {
+      if (response.data === "succeeded") {
         await setCompleted(true);
         newCart.splice(0, newCart.length);
         setCart(newCart);
       } else {
-        alert("Erreur de paiement");
+        console.log(response.data);
+        alert("Erreur lors du paiement !");
       }
     } catch (error) {
       console.log(error.message);
