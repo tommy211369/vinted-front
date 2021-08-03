@@ -152,6 +152,7 @@ export default function Header({
             setDataUsername={setDataUsername}
             displaySearch={displaySearch}
             cart={cart}
+            setCart={setCart}
             displayCart={displayCart}
             setDisplayCart={setDisplayCart}
           />

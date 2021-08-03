@@ -7,12 +7,16 @@ export default function LogOut({
   setDataUsername,
   setDisplayCart,
   setCart,
+  cart,
 }) {
   const history = useHistory();
 
   return (
     <li
       onClick={() => {
+        const newCart = [...cart];
+        newCart.splice(0, newCart.length);
+        setCart(newCart);
         setDisplayCart(false);
         Cookies.remove("userToken");
         setUserToken(null);

@@ -13,11 +13,18 @@ export default function ModalMenu({
   displaySearch,
   displayCart,
   setDisplayCart,
+  cart,
+  setCart,
 }) {
   return (
     <ul className={displaySearch ? "modal-menu" : "modal-menu-nosearch"}>
       {userToken ? (
-        <LogOut setUserToken={setUserToken} dataUsername={dataUsername} />
+        <LogOut
+          setUserToken={setUserToken}
+          dataUsername={dataUsername}
+          setCart={setCart}
+          cart={cart}
+        />
       ) : (
         <LogInSignOut setModalMenu={setModalMenu} />
       )}

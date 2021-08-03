@@ -24,6 +24,7 @@ export default function Menu({
           setDataUsername={setDataUsername}
           setDisplayCart={setDisplayCart}
           setCart={setCart}
+          cart={cart}
         />
       ) : (
         <LogInSignOut setModalMenu={setModalMenu} />
