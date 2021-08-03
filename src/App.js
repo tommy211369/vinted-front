@@ -171,6 +171,7 @@ function App() {
             sort={sort}
             priceMin={priceMin}
             priceMax={priceMax}
+            userToken={userToken}
             setDisplaySearch={setDisplaySearch}
             setDisplayLogo={setDisplayLogo}
           />
