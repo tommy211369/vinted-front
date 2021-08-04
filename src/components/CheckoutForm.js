@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
@@ -10,15 +10,6 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
   );
 
   console.log(orderNumber);
-
-  // useEffect(() => {
-  //   const generateNumber = () => {
-  //     setOrderNumber(Math.floor(Math.random() * 5000));
-  //     console.log(orderNumber);
-  //   };
-
-  //   generateNumber();
-  // }, []);
 
   const stripe = useStripe();
   const elements = useElements();
