@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import OfferForm from "../components/Publish/OfferForm";
+import Dropzone from "react-dropzone";
 import { useHistory } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import axios from "axios";
@@ -17,6 +17,12 @@ const Publish = ({ setDisplaySearch, userToken, dataUsername }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const history = useHistory();
+
+  // drop image
+  const handleOnDrop = (files, rejectedFiles) => {
+    console.log(files);
+    console.log("rejectedFiles are : ", rejectedFiles);
+  };
 
   const handleSubmit = async (e) => {
     try {
@@ -70,7 +76,7 @@ const Publish = ({ setDisplaySearch, userToken, dataUsername }) => {
       <form className="offer-form" onSubmit={handleSubmit}>
         <h2>Vends tes produits !</h2>
         <div className="add-picture">
-          <div className="drop-zone">
+          <div>
             <input
               // multiple={true}
               type="file"

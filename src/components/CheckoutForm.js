@@ -1,10 +1,24 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
 const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
   const [completed, setCompleted] = useState(false);
+  const [orderNumber, setOrderNumber] = useState(
+    Math.floor(Math.random() * (100000000 - 10000000) + 10000000)
+  );
+
+  console.log(orderNumber);
+
+  // useEffect(() => {
+  //   const generateNumber = () => {
+  //     setOrderNumber(Math.floor(Math.random() * 5000));
+  //     console.log(orderNumber);
+  //   };
+
+  //   generateNumber();
+  // }, []);
 
   const stripe = useStripe();
   const elements = useElements();
@@ -58,6 +72,16 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
       {completed ? (
         <div className="payment-done">
           <p>Paiement effectué !</p>
+          <div className="payment-infos">
+            <div>
+              <p>Numéro de commande : </p>
+              <p>{orderNumber}</p>
+            </div>
+            <div>
+              <p>Vous avez payé : </p>
+              <p>{total.toFixed(2)} €</p>
+            </div>
+          </div>
           <Link to="/">Retourner à la page d'accueil</Link>
         </div>
       ) : (

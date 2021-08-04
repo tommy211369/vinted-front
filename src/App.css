@@ -490,7 +490,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* SELL NOW */
+/* SELL NOW : PUBLISH*/
 
 .sell {
   background-color: #ebedee;
@@ -1001,12 +1001,30 @@ body {
   flex-direction: column;
 }
 
-.payment-done p {
+.payment-done > p {
   width: max-content;
   margin: 30px auto;
   padding: 20px;
   color: white;
   background-color: #3bc1c8;
+}
+
+.payment-infos {
+  margin: 20px auto;
+  width: 40%;
+}
+
+.payment-infos div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-infos p {
+  margin-bottom: 7px;
+}
+
+.payment-infos p:last-child {
+  font-weight: 500;
 }
 
 .payment-done a {
