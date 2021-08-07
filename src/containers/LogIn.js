@@ -33,15 +33,15 @@ export default function LogIn({
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // requete axios post:
       const response = await axios.post(
         "https://vinted-back-tommy.herokuapp.com/user/login",
         userData
       );
+      //   save username as a cookie :
       setUserNameCookie(response.data.resUser.account.username);
-      //   enregistrer le token dans un cookie :
+      //   save token as a cookie :
       setUser(response.data.resUser.token);
-      // rediriger vers home page :
+      // redirect to home page :
       history.push("/");
     } catch (error) {
       console.log(error.message);

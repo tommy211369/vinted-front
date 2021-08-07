@@ -45,6 +45,7 @@ export default function ItemsList({
             setNbrItems={setNbrItems}
             // selectItems={selectItems}
             nbrItems={nbrItems}
+            setPage={setPage}
           />
 
           {/* choose page  */}

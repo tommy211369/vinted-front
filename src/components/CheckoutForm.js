@@ -23,18 +23,18 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
     try {
       e.preventDefault();
       const newCart = [...cart];
-      // récupérer les données du formulaire
+      // get form datas
       const cardElements = elements.getElement(CardElement);
 
-      // envoyer à l'api stripe
+      // send datas to stripe api
       const stripeResponse = await stripe.createToken(cardElements, {
         name: buyer,
       });
 
-      console.log("Token front : ", stripeResponse.token.id);
-      const stripeToken = stripeResponse.token.id; // token
+      // Strip API send a token
+      const stripeToken = stripeResponse.token.id;
 
-      // envoyer le stripeToken au serveur
+      // send token to our server
       const response = await axios.post(
         "https://vinted-back-tommy.herokuapp.com/payment",
         {
@@ -45,6 +45,7 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
         }
       );
 
+      // response from server
       if (response.data === "succeeded") {
         await setCompleted(true);
         newCart.splice(0, newCart.length);

@@ -65,18 +65,17 @@ export default function SignUp({
         formData.append("password", password);
         formData.append("picture", picture);
 
-        // requete axios post:
         const response = await axios.post(
           "https://vinted-back-tommy.herokuapp.com/user/signup",
           formData
         );
 
         setUserNameCookie(response.data.resNewUser.account.username);
-        // enregistrer le token dans un cookie :
+        // save token as a cookie :
         setUser(response.data.resNewUser.token);
 
         setIsLoading(false);
-        // rediriger vers home page :
+        // redirect to home page :
         history.push("/");
       }
     } catch (error) {

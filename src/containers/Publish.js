@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Dropzone from "react-dropzone";
 import { useHistory } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import axios from "axios";
@@ -18,12 +17,6 @@ const Publish = ({ setDisplaySearch, userToken, dataUsername }) => {
 
   const history = useHistory();
 
-  // drop image
-  const handleOnDrop = (files, rejectedFiles) => {
-    console.log(files);
-    console.log("rejectedFiles are : ", rejectedFiles);
-  };
-
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -33,7 +26,7 @@ const Publish = ({ setDisplaySearch, userToken, dataUsername }) => {
       // formData()
       const formData = new FormData();
 
-      // ajouter des paires clé/valeur
+      // add to formData
       formData.append("title", offerTitle);
       formData.append("price", offerPrice);
       formData.append("condition", offerCondition);
@@ -44,7 +37,7 @@ const Publish = ({ setDisplaySearch, userToken, dataUsername }) => {
       formData.append("picture", offerPicture);
       formData.append("description", offerDescription);
 
-      // requête vers le serveur
+      // send datas to server with user token
       const response = await axios.post(
         "https://vinted-back-tommy.herokuapp.com/offer/publish",
         formData,
@@ -55,7 +48,6 @@ const Publish = ({ setDisplaySearch, userToken, dataUsername }) => {
         }
       );
 
-      console.log(response.data.offer._id);
       setIsLoading(false);
 
       // redirect to offer page :

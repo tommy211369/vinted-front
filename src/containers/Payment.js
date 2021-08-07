@@ -6,7 +6,7 @@ import { Elements } from "@stripe/react-stripe-js";
 
 const Payment = ({ cart, setCart, setDisplaySearch, setDisplayLogo }) => {
   const location = useLocation();
-  const { amount, buyer } = location.state;
+  const { amount, buyer } = location.state; // took from cart
 
   useEffect(() => {
     setDisplayLogo(true);

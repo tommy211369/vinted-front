@@ -1,12 +1,13 @@
 import React from "react";
 
-const DisplayItems = ({ setNbrItems, nbrItems }) => {
+const DisplayItems = ({ setNbrItems, nbrItems, setPage }) => {
   return (
     <div>
       <p>Articles par pages :</p>
       <select
         value={nbrItems}
         onChange={(e) => {
+          setPage(1);
           setNbrItems(Number(e.target.value));
         }}
       >
