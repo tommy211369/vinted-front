@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import LogOut from "./LogOut";
 import LogInSignOut from "./LogInSignUp";
-import Languages from "./Languages";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Menu({
@@ -49,10 +48,6 @@ export default function Menu({
           }}
         />
       )}
-
-      <li className="languages">
-        <Languages />
-      </li>
     </ul>
   );
 }
