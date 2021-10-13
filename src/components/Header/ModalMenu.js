@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import LogOut from "./LogOut";
 import LogInSignOut from "./LogInSignUp";
-import Languages from "./Languages";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function ModalMenu({
@@ -66,9 +65,6 @@ export default function ModalMenu({
         />
       )}
 
-      <li className="languages">
-        <Languages />
-      </li>
       <FontAwesomeIcon
         icon="times-circle"
         onClick={() => {
