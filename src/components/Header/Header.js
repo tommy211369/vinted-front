@@ -1,11 +1,13 @@
 import React, { Fragment } from "react";
-import Logo from "./Logo";
-import Search from "./Search";
-import Menu from "./Menu";
-import ModalSearch from "./ModalSearch";
-import ModalMenu from "./ModalMenu";
-import Cart from "./Cart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./Header.css";
+
+import Logo from "./Logo";
+import Search from "./Search/Search";
+import Menu from "./Menu/Menu";
+import ModalSearch from "./ModalSearch/ModalSearch";
+import ModalMenu from "./ModalMenu/ModalMenu";
+import Cart from "./Cart/Cart";
 
 export default function Header({
   modalSearchBar,

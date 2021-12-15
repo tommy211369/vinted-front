@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Spinner from "../components/Spinner";
-import Hero from "../components/Home/Hero";
-import ItemsList from "../components/Home/ItemsList";
+
 import axios from "axios";
+
+import Spinner from "../components/Spinner/Spinner";
+import Hero from "../components/Home/Hero/Hero";
+import ItemsList from "../components/Home/ItemsList/ItemsList";
 
 export default function Home({
   title,

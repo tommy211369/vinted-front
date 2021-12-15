@@ -5,9 +5,10 @@ import Header from "./components/Header/Header";
 import Home from "./containers/Home";
 import Cookies from "js-cookie";
 import Offer from "./containers/Offer";
-import SignUp from "./containers/SignUp";
-import LogIn from "./containers/LogIn";
-import Publish from "./containers/Publish";
+import SignUp from "./containers/Log/SignUp";
+import LogIn from "./containers/Log/LogIn";
+import Publish from "./containers/Publish/Publish";
+import ScrollToTop from "./components/ScrollToTop";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faSearch,
@@ -92,6 +93,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Header
         userToken={userToken}
         setUserToken={setUserToken}

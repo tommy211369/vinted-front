@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Spinner from "../components/Spinner";
-import OfferDetails from "../components/Offer/OfferDetails";
-
 import { useParams } from "react-router-dom";
 import axios from "axios";
+
+import Spinner from "../components/Spinner/Spinner";
+import OfferDetails from "../components/Offer/OfferDetails/OfferDetails";
 
 export default function Offer({
   setDisplaySearch,

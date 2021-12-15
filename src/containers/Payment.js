@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import CheckoutForm from "../components/CheckoutForm";
+import CheckoutForm from "../components/CheckoutForm/CheckoutForm";
 import { useLocation } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";

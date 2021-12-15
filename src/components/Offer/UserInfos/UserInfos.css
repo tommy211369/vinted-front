@@ -1,0 +1,39 @@
+.offerDetails .details .user {
+  border-top: 2px solid grey;
+  padding-top: 40px;
+  margin-bottom: 40px;
+}
+
+.offerDetails .details .user p:first-child {
+  color: initial;
+  font-weight: bold;
+}
+
+.offerDetails .details .user p:nth-child(2) {
+  color: #adadad;
+}
+
+.offerDetails .details .user p {
+  line-height: 30px;
+  max-width: 100%;
+}
+
+.offerDetails .details .user .user-infos {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.offerDetails .details .user .user-infos p {
+  margin-left: 15px;
+  color: #3bc1c8;
+}
+
+.offerDetails .details .user img {
+  width: 50px;
+  height: 50px;
+  /* object-fit: cover; */
+  object-position: top;
+  border-radius: 50px;
+  padding: 5px;
+}

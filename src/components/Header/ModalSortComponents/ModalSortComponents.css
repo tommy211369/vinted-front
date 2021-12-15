@@ -1,0 +1,42 @@
+.modal-sort-components {
+  visibility: hidden;
+  text-align: center;
+  box-shadow: 0 3px 5px 0 #3bc1c8;
+  background-color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 38px;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 0 0 5px 5px;
+}
+
+.modal-sort-components .slider {
+  margin-top: 20px;
+}
+
+.modal-sort-components .asc-desc {
+  display: flex;
+  justify-content: space-evenly;
+  width: 70%;
+}
+
+/* _______________________________________ */
+/* MEDIA QUERIES */
+/* _______________________________________ */
+
+@media (max-width: 960px) {
+  .modal-sort-components {
+    visibility: visible;
+  }
+}
+
+@media (max-width: 449px) {
+  .modal-sort-components .asc-desc {
+    width: 100%;
+  }
+}

@@ -1,0 +1,24 @@
+.header li:hover {
+  cursor: pointer;
+}
+
+.logout {
+  color: #3bc1c8;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 5px;
+  border: 1px solid #3bc1c8;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.logout {
+  font-size: 11px;
+  overflow: scroll;
+}
+
+.logout:hover {
+  color: white;
+  background-color: #3bc1c8;
+}

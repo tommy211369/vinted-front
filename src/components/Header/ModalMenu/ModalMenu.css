@@ -1,0 +1,129 @@
+.modal-menu {
+  visibility: hidden;
+  position: absolute;
+  box-shadow: 0 0 5px 0 #3bc1c8;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  background-color: white;
+  width: 30%;
+  height: 250px;
+  top: 140px;
+  padding: 10px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.modal-menu-nosearch {
+  visibility: hidden;
+  position: absolute;
+  box-shadow: 0 0 5px 0 #3bc1c8;
+  z-index: 1000;
+  background-color: white;
+  width: 30%;
+  height: 250px;
+  top: 90px;
+  left: 35%;
+  padding: 10px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.sell-now {
+  color: white;
+  background-color: #3bc1c8;
+  border: 1px solid #3bc1c8;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sell-now:hover {
+  color: #3bc1c8;
+  background-color: white;
+}
+
+.modal-menu .login-signup {
+  text-align: center;
+  display: flex;
+  height: 80px;
+  flex-direction: column;
+}
+
+.close-menu-modal {
+  position: absolute;
+  right: 0;
+  top: 2px;
+
+  right: 2px;
+  font-size: 20px;
+  color: black;
+}
+
+.close-menu-modal:hover {
+  cursor: pointer;
+}
+
+/* _______________________________________ */
+/* MEDIA QUERIES */
+/* _______________________________________ */
+
+@media (max-width: 1070px) {
+  .header .modal-menu,
+  .header .modal-menu-nosearch {
+    visibility: visible;
+  }
+
+  .header .modal-menu-nosearch {
+    left: 50%;
+  }
+}
+
+@media (max-width: 960px) {
+  .header .modal-menu {
+    top: 60px;
+  }
+}
+
+@media (max-width: 594px) {
+  .header .modal-menu,
+  .header .modal-menu-nosearch {
+    width: 50%;
+  }
+
+  .header .modal-menu-nosearch {
+    left: 27%;
+  }
+}
+
+@media (max-width: 425px) {
+  .header .modal-menu-nosearch {
+    width: 60%;
+    left: 20%;
+  }
+}
+
+@media (max-width: 375px) {
+  .header .modal-menu,
+  .header .modal-menu-nosearch {
+    width: 70%;
+  }
+
+  .header .modal-menu-nosearch {
+    left: 50px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header .modal-menu-nosearch {
+    width: 80%;
+    left: 10%;
+  }
+}

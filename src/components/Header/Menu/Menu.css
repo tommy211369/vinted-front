@@ -1,0 +1,31 @@
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 500px;
+  background-color: red;
+}
+
+.cart-icon {
+  color: #3bc1c8;
+  font-size: 25px;
+  padding: 10px;
+  transition: background-color 0.2s ease;
+  border-radius: 50px;
+}
+
+.cart-icon:hover {
+  background-color: rgba(59, 193, 200, 0.2);
+
+  cursor: pointer;
+}
+
+/* _______________________________________ */
+/* MEDIA QUERIES */
+/* _______________________________________ */
+
+@media (max-width: 1070px) {
+  .menu {
+    display: none;
+  }
+}

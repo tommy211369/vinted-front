@@ -1,0 +1,20 @@
+.offerDetails .details .offer-infos {
+  margin-bottom: 40px;
+}
+
+.offerDetails .details .offer-infos div {
+  display: flex;
+}
+
+.offerDetails .details .offer-infos p {
+  line-height: 20px;
+}
+
+.offerDetails .details .offer-infos p:first-child {
+  width: 150px;
+  color: #bab4b4;
+}
+
+.offerDetails .details .offer-infos p:nth-child(2) {
+  max-width: 100px;
+}

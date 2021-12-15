@@ -1,0 +1,23 @@
+.asc-desc .checkbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.asc-desc .checkbox p {
+  font-size: 12px;
+}
+
+.asc-desc label {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+}
+
+.asc-desc .blue {
+  color: #3bc1c8;
+}

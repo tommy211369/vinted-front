@@ -1,0 +1,48 @@
+.modal-search-bar input {
+  box-sizing: border-box;
+  font-size: 16px;
+  width: 100%;
+  border: none;
+  padding: 5px 0 5px 10px;
+  background-color: #e8e8e8;
+}
+
+.modal-search-bar input:focus {
+  outline: none;
+}
+
+.modal-search-bar {
+  visibility: hidden;
+  position: absolute;
+  box-shadow: 0 0 5px 0 #3bc1c8;
+  width: 90%;
+  color: #757575;
+  top: 50px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 5px 5px 5px 15px;
+  background-color: #e8e8e8;
+  border-radius: 5px 5px 0 0;
+}
+
+.close-search-bar-modal {
+  position: absolute;
+  right: 0;
+  top: -15px;
+  color: black;
+}
+
+.close-search-bar-modal:hover {
+  cursor: pointer;
+}
+
+/* _______________________________________ */
+/* MEDIA QUERIES */
+/* _______________________________________ */
+
+@media (max-width: 960px) {
+  .modal-search-bar {
+    visibility: visible;
+  }
+}
