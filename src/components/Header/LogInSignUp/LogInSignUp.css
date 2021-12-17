@@ -19,3 +19,15 @@
   color: white;
   background-color: #3bc1c8;
 }
+
+/* _______________________________________ */
+/* MEDIA QUERIES */
+/* _______________________________________ */
+
+@media (max-width: 1070px) {
+  .login-signup {
+    flex-direction: column;
+    align-items: center;
+    min-height: 85px;
+  }
+}

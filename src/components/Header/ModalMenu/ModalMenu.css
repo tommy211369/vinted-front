@@ -3,6 +3,8 @@
   position: absolute;
   box-shadow: 0 0 5px 0 #3bc1c8;
   display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
   z-index: 1000;
   background-color: white;
@@ -11,15 +13,15 @@
   top: 140px;
   padding: 10px;
   border-radius: 7px;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
 }
 
 .modal-menu-nosearch {
   visibility: hidden;
   position: absolute;
   box-shadow: 0 0 5px 0 #3bc1c8;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
   z-index: 1000;
   background-color: white;
   width: 30%;
@@ -28,9 +30,6 @@
   left: 35%;
   padding: 10px;
   border-radius: 7px;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
 }
 
 .sell-now {
@@ -79,11 +78,12 @@
   .header .modal-menu,
   .header .modal-menu-nosearch {
     visibility: visible;
+    align-items: center;
   }
 
-  .header .modal-menu-nosearch {
+  /* .header .modal-menu-nosearch {
     left: 50%;
-  }
+  } */
 }
 
 @media (max-width: 960px) {
