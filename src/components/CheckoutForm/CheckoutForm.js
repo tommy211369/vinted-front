@@ -37,7 +37,7 @@ const CheckoutForm = ({ amount, buyer, cart, setCart }) => {
 
       // send token to our server
       const response = await axios.post(
-        "https://vinted-back-tommy.herokuapp.com/payment",
+        "https://vinted-backend-9rwc.onrender.com/payment",
         {
           stripeToken: stripeToken,
           price: total,

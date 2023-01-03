@@ -25,7 +25,7 @@ export default function Offer({
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://vinted-back-tommy.herokuapp.com/offer/${id}`
+          `https://vinted-backend-9rwc.onrender.com/offer/${id}`
         );
         setData(response.data);
 

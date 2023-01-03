@@ -68,7 +68,7 @@ export default function SignUp({
         formData.append("picture", picture);
 
         const response = await axios.post(
-          "https://vinted-back-tommy.herokuapp.com/user/signup",
+          "https://vinted-backend-9rwc.onrender.com/user/signup",
           formData
         );
 

@@ -41,7 +41,7 @@ const Publish = ({ setDisplaySearch, userToken, dataUsername }) => {
 
       // send datas to server with user token
       const response = await axios.post(
-        "https://vinted-back-tommy.herokuapp.com/offer/publish",
+        "https://vinted-backend-9rwc.onrender.com/offer/publish",
         formData,
         {
           headers: {

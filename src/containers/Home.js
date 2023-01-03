@@ -32,7 +32,7 @@ export default function Home({
     const fetchOffers = async () => {
       try {
         const response = await axios.get(
-          `https://vinted-back-tommy.herokuapp.com/offers?limit=${nbrItems}&page=${page}&title=${title}&sort=${sort}&priceMin=${priceMin}&priceMax=${priceMax}`
+          `https://vinted-backend-9rwc.onrender.com/offers?limit=${nbrItems}&page=${page}&title=${title}&sort=${sort}&priceMin=${priceMin}&priceMax=${priceMax}`
         );
         setCount(response.data.count);
         setData(response.data.offers);
