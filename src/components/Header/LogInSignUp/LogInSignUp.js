@@ -12,7 +12,7 @@ export default function LogInSignUp({ setModalMenu }) {
           setModalMenu(false);
         }}
       >
-        Se connecter
+        Connexion
       </Link>
       <Link
         to="/signup"
